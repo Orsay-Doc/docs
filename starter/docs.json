@@ -1,0 +1,116 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Orsay Docs",
+  "colors": {
+    "primary": "#25dd90",
+    "light": "#25dd90",
+    "dark": "#25dd90"
+  },
+
+  "favicon": "icone.png",
+  "navigation": {
+    "dropdowns": [
+      {
+        "dropdown": "🇬🇧 English",
+        "icon": "earth",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "en/home"
+            ]
+          },
+          {
+            "group": "🚀 Quickstart",
+            "pages": [
+              "en/quickstart/instagram",
+              "en/quickstart/whatsapp",
+              "en/quickstart/best_campaigns"
+            ]
+          },
+          {
+            "group": "📘 Guides & Tutorials",
+            "pages": [
+              "en/guides&tutorials/zapier",
+              "en/guides&tutorials/agents",
+              "en/guides&tutorials/sequences",
+              "en/guides&tutorials/conversations"
+            ]
+          },
+          {
+            "group": "⚙️ Integrations & Settings",
+            "pages": [
+              "en/integrations&settings/integrations",
+              "en/integrations&settings/settings&profile"
+            ]
+          },
+          {
+            "group": "📚 Resources",
+            "pages": [
+              "en/resources/prompt",
+              "en/resources/faq"
+            ]
+          }
+        ]
+      },
+      {
+        "dropdown": "🇫🇷 Français",
+        "icon": "earth",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "fr/home"
+            ]
+          },
+          {
+            "group": "Endpoint examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/orsay_ai_large.svg",
+    "dark": "/logo/orsay_ai_large.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://wa.me/33780905889"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Integrations",
+      "href": "https://app.orsay.ai/integrations"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" role="img" aria-labelledby="title desc">
+  <title id="title">Orsay AI.</title>
+  <desc id="desc">Vector logo Orsay AI with transparent background and green color #25dd90</desc>
+
+  <!-- Using a web-safe fallback stack; if you want the exact font embedded, provide the font file -->
+  <style>
+    text { font-family: "Poppins", "Inter", "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 700; }
+  </style>
+
+  <text x="20" y="210" font-size="200" fill="#25dd90">Orsay AI.</text>
+</svg>
