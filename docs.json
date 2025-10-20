@@ -65,12 +65,34 @@
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "🚀 Quickstart",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "en/quickstart/instagram",
+              "en/quickstart/whatsapp",
+              "en/quickstart/best_campaigns"
+            ]
+          },
+          {
+            "group": "📘 Guides & Tutorials",
+            "pages": [
+              "en/guides&tutorials/zapier",
+              "en/guides&tutorials/agents",
+              "en/guides&tutorials/sequences",
+              "en/guides&tutorials/conversations"
+            ]
+          },
+          {
+            "group": "⚙️ Integrations & Settings",
+            "pages": [
+              "en/integrations&settings/integrations",
+              "en/integrations&settings/settings&profile"
+            ]
+          },
+          {
+            "group": "📚 Resources",
+            "pages": [
+              "en/resources/prompt",
+              "en/resources/faq"
             ]
           }
         ]
