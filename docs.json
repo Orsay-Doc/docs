@@ -12,12 +12,6 @@
   "navigation": {
     "dropdowns": [
       {
-        "group": " ",
-        "pages": [
-          "index"
-        ]
-      },
-      {
         "dropdown": "🇬🇧 English",
         "icon": "earth",
         "groups": [
