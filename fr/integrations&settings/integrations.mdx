@@ -1,89 +1,109 @@
 ---
-title: "🚦 Integrations"
-description: "The “integrations” section will be used to link CSVs, networks, zappier..."
+title: "🚦 Intégrations"
+description: "La section “Intégrations” permet de connecter des CSV, réseaux, Zapier..."
 ---
 
-To go to this menu, click on **“integrations”** in the bottom left-hand corner.
+Pour accéder à ce menu, cliquez sur **“Intégrations”** en bas à gauche.
 
-Click on **“browse integrations”**
+Cliquez sur **“Parcourir les intégrations”**
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/1.png" />
-## To connect “WhatsApp”:
 
-- Click on **“WhatsApp”**, **“Connect WhatsApp”**
-- Then on **“Create WhatsApp profile”**.
-- Fill in your details, click on **“confirm and continue”**.
-- Click on **“Connect WhatsApp number”**.
-- Once back in [app.orsay.ai](http://app.orsay.ai/), click on **“create inbound message”**.
-- Put in the message you want and click on **“finish and create link”**.
+## Pour connecter “WhatsApp” :
 
-Your WhatsApp profile is successfully integrated
+<AccordionGroup>
+  <Accordion title="Connecter WhatsApp">
+    - Cliquez sur **“WhatsApp”**, puis **“Connecter WhatsApp”**
+    - Ensuite sur **“Créer un profil WhatsApp”**
+    - Remplissez vos informations, puis cliquez sur **“Confirmer et continuer”**
+    - Cliquez sur **“Connecter le numéro WhatsApp”**
+    - Une fois de retour sur [app.orsay.ai](http://app.orsay.ai/), cliquez sur **“Créer un message entrant”**
+    - Entrez le message souhaité et cliquez sur **“Terminer et créer le lien”**
+
+Votre profil WhatsApp est maintenant intégré avec succès.
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/2.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/3.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/4.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/5.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/6.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/7.png" />
-## If you wish to modify :
+  </Accordion>
+</AccordionGroup>
 
-- Click on the **“...”** next to the organization in question
-- Then click on **“Edit”**.
-- Modify, delete as required
+## Si vous souhaitez modifier :
+
+<AccordionGroup>
+  <Accordion title="Modifier">
+    - Cliquez sur les **“...”** à côté de l’organisation concernée
+    - Puis cliquez sur **“Éditer”**
+    - Modifiez ou supprimez selon vos besoins
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/8.png" />
+  </Accordion>
+</AccordionGroup>
 
-## To delete something:
+## Pour supprimer quelque chose :
 
-- Click on the **“...”** next to the organization in question
-- Select **“delete"**
-- Then click on **“remove agent”**.
+<AccordionGroup>
+  <Accordion title="Supprimer">
+    - **Cela permet de supprimer vos derniers abonnés**
+  </Accordion>
+</AccordionGroup>
 
-<img style={{ borderRadius: "0.5rem" }} src="/image_integration/9.png" />
+## Si vous devez supprimer un numéro :
 
-<img style={{ borderRadius: "0.5rem" }} src="/image_integration/10.png" />
-## If you need to delete a number :
+<AccordionGroup>
+  <Accordion title="Supprimer un numéro">
+    **Dans l’organisation :**
 
-**In the organization :**
-
-- Go to **“link phone number"**
-- Click on the red garbage can
-- Then on **“remove number"**
+    - Allez sur **“Lier un numéro de téléphone”**
+    - Cliquez sur la corbeille rouge
+    - Puis sur **“Supprimer le numéro”**
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/11.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/12.png" />
-## The integration steps work in the same way for each platform.
+  </Accordion>
+</AccordionGroup>
 
-**To upload a file to the dashboard :**
+## Les étapes d’intégration fonctionnent de la même manière pour chaque plateforme.
 
-- Click on **“bulk Leads”**, **“upload files”**.
+<AccordionGroup>
+  <Accordion title="Intégration pour chaque plateforme">
+    **Pour importer un fichier sur le dashboard :**
+
+    - Cliquez sur **“Leads en masse”**, puis **“Importer des fichiers”**
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/13.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/14.png" />
-## Upload files :
+  </Accordion>
+</AccordionGroup>
 
-- Import CSV file
-- Fill in the country **“france”** (if French)
-- First name/phone number : fill in the column title with the information
-- Select the right sequence
-- Click on **“upload file”**
+## Importer des fichiers :
 
-To upload a CSV you need to have a sequence with trigger type <code style={{ color: '#d00' }}>CONTACT_SUBSCRIBED_TO_SEQUENCE</code>
+<AccordionGroup>
+  <Accordion title="Importer">
+    - Importez un fichier CSV
+    - Remplissez le pays **“France”** (si français)
+    - Prénom/Numéro de téléphone : renseignez le titre de la colonne correspondante
+    - Sélectionnez la séquence appropriée
+    - Cliquez sur **“Importer le fichier”**
+
+Pour importer un CSV, vous devez avoir une séquence avec le type de déclencheur <code style={{ color: '#d00' }}>CONTACT_SUBSCRIBED_TO_SEQUENCE</code>
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/15.png" />
-
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/16.png" />
-## Update auto-run schedule :
+  </Accordion>
+</AccordionGroup>
 
-- Select upload sequence
-- Number of leads to be entered in sequence
-- Click on **“update schedule"**
+## Mettre à jour le calendrier d’exécution automatique :
+
+<AccordionGroup>
+  <Accordion title="Exécution automatique">
+    - Sélectionnez la séquence d’import
+    - Nombre de leads à intégrer dans la séquence
+    - Cliquez sur **“Mettre à jour le planning”**
 
 <img style={{ borderRadius: "0.5rem" }} src="/image_integration/17.png" />
+  </Accordion>
+</AccordionGroup>

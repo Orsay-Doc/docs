@@ -65,34 +65,34 @@
             ]
           },
           {
-            "group": "🚀 Quickstart",
+            "group": "🚀 Démarrage rapide",
             "pages": [
-              "en/quickstart/instagram",
-              "en/quickstart/whatsapp",
-              "en/quickstart/best_campaigns"
+              "fr/quickstart/instagram",
+              "fr/quickstart/whatsapp",
+              "fr/quickstart/best_campaigns"
             ]
           },
           {
-            "group": "📘 Guides & Tutorials",
+            "group": "📘 Guides & Tutoriels",
             "pages": [
-              "en/guides&tutorials/zapier",
-              "en/guides&tutorials/agents",
-              "en/guides&tutorials/sequences",
-              "en/guides&tutorials/conversations"
+              "fr/guides&tutorials/zapier",
+              "fr/guides&tutorials/agents",
+              "fr/guides&tutorials/sequences",
+              "fr/guides&tutorials/conversations"
             ]
           },
           {
-            "group": "⚙️ Integrations & Settings",
+            "group": "⚙️ Integrations & Paramètres",
             "pages": [
-              "en/integrations&settings/integrations",
-              "en/integrations&settings/settings&profile"
+              "fr/integrations&settings/integrations",
+              "fr/integrations&settings/settings&profile"
             ]
           },
           {
             "group": "📚 Resources",
             "pages": [
-              "en/resources/prompt",
-              "en/resources/faq"
+              "fr/resources/prompt",
+              "fr/resources/faq"
             ]
           }
         ]
