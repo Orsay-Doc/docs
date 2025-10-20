@@ -12,6 +12,12 @@
   "navigation": {
     "dropdowns": [
       {
+        "group": " ",
+        "pages": [
+          "index"
+        ]
+      },
+      {
         "dropdown": "🇬🇧 English",
         "icon": "earth",
         "groups": [
@@ -115,18 +121,6 @@
       "label": "Integrations",
       "href": "https://app.orsay.ai/integrations"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
