@@ -72,11 +72,17 @@ Select your support
 
   </Accordion>
   <Accordion title="Create Instagram Outbounds sequences">
-    For the "New Followers" trigger, you follow the same steps as
-    for inbound. - Select outbound triggers, then click on “+”
-    and “Add action step”. - For "Followers (another account)", "New Likes
-    (specific post)", and "Comments (another account)". Select your Instagram
-    account, then click on “Continue”.
+    Setting Up Triggers and Actions  
+  Start by selecting a trigger such as “New Followers” or “New Like.”  
+  Then add the actions that will be executed from your Instagram account.  
+  All actions added to the same flow will be triggered sequentially on this account when the trigger is activated.
+
+Example:
+
+Trigger: “New Like” (on a specific post).  
+ Actions: “Follow” then “Like.”  
+ Result: If someone likes the post, the system will first follow that user, then like one of their posts.
+
     <img style={{ borderRadius: "0.5rem" }} src="/image_istg/2.1.png" />
     - Add the source: use @username for followers and the post URL
     for likes or comments.
@@ -87,13 +93,13 @@ Select your support
     <img style={{ borderRadius: "0.5rem" }} src="/image_istg/1.png" />
     - Choose the type of action you want to perform, then click on "Continue".
     <img style={{ borderRadius: "0.5rem" }} src="/image_istg/2.png" />
-	- It is possible to combine several actions to perform multiple steps within the same sequence.
-	<img style={{ borderRadius: "0.5rem" }} src="/image_istg/6.png" />
+    - It is possible to combine several actions to perform multiple steps within the same sequence.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_istg/6.png" />
     - You can also add a delay between each action.
     <img style={{ borderRadius: "0.5rem" }} src="/image_istg/3.png" />
     - And choose the duration, either in hours or days.
     <img style={{ borderRadius: "0.5rem" }} src="/image_istg/4.png" />
-	<Tip>
+    <Tip>
       Our recommandations:
       - 1.⁠ ⁠Follow
       - 2.⁠ ⁠like a post
