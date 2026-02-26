@@ -25,6 +25,7 @@
             "group": "🚀 Quickstart",
             "pages": [
               "en/quickstart/instagram",
+              "en/quickstart/instagram-security",
               "en/quickstart/whatsapp",
               "en/quickstart/best_campaigns"
             ]
@@ -68,6 +69,7 @@
             "group": "🚀 Démarrage rapide",
             "pages": [
               "fr/quickstart/instagram",
+              "fr/quickstart/instagram-security",
               "fr/quickstart/whatsapp",
               "fr/quickstart/best_campaigns"
             ]
