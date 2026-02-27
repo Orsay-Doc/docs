@@ -36,7 +36,8 @@
               "en/guides&tutorials/zapier",
               "en/guides&tutorials/agents",
               "en/guides&tutorials/sequences",
-              "en/guides&tutorials/conversations"
+              "en/guides&tutorials/conversations",
+              "en/guides&tutorials/instagram-lead-finder"
             ]
           },
           {
@@ -49,6 +50,7 @@
           {
             "group": "📚 Resources",
             "pages": [
+              "en/resources/pricing",
               "en/resources/prompt",
               "en/resources/faq"
             ]
@@ -80,7 +82,8 @@
               "fr/guides&tutorials/zapier",
               "fr/guides&tutorials/agents",
               "fr/guides&tutorials/sequences",
-              "fr/guides&tutorials/conversations"
+              "fr/guides&tutorials/conversations",
+              "fr/guides&tutorials/instagram-lead-finder"
             ]
           },
           {
@@ -93,6 +96,7 @@
           {
             "group": "📚 Resources",
             "pages": [
+              "fr/resources/pricing",
               "fr/resources/prompt",
               "fr/resources/faq"
             ]
