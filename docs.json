@@ -22,29 +22,33 @@
             ]
           },
           {
-            "group": "🚀 Quickstart",
+            "group": "🚀 Getting Started",
             "pages": [
               "en/quickstart/instagram",
-              "en/quickstart/instagram-security",
-              "en/quickstart/whatsapp",
-              "en/quickstart/best_campaigns"
+              "en/quickstart/whatsapp"
             ]
           },
           {
-            "group": "📘 Guides & Tutorials",
+            "group": "🤖 Core Features",
             "pages": [
-              "en/guides&tutorials/zapier",
+              "en/guides&tutorials/instagram-lead-finder",
               "en/guides&tutorials/agents",
               "en/guides&tutorials/sequences",
-              "en/guides&tutorials/conversations",
-              "en/guides&tutorials/instagram-lead-finder"
+              "en/guides&tutorials/conversations"
             ]
           },
           {
             "group": "⚙️ Integrations & Settings",
             "pages": [
               "en/integrations&settings/integrations",
-              "en/integrations&settings/settings&profile"
+              "en/integrations&settings/settings&profile",
+              "en/guides&tutorials/zapier"
+            ]
+          },
+          {
+            "group": "🛡️ Safety & Compliance",
+            "pages": [
+              "en/quickstart/instagram-security"
             ]
           },
           {
@@ -52,6 +56,8 @@
             "pages": [
               "en/resources/pricing",
               "en/resources/prompt",
+              "en/template_prompt",
+              "en/quickstart/best_campaigns",
               "en/resources/faq"
             ]
           }
@@ -71,33 +77,38 @@
             "group": "🚀 Démarrage rapide",
             "pages": [
               "fr/quickstart/instagram",
-              "fr/quickstart/instagram-security",
-              "fr/quickstart/whatsapp",
-              "fr/quickstart/best_campaigns"
+              "fr/quickstart/whatsapp"
             ]
           },
           {
-            "group": "📘 Guides & Tutoriels",
+            "group": "🤖 Fonctionnalités principales",
             "pages": [
-              "fr/guides&tutorials/zapier",
+              "fr/guides&tutorials/instagram-lead-finder",
               "fr/guides&tutorials/agents",
               "fr/guides&tutorials/sequences",
-              "fr/guides&tutorials/conversations",
-              "fr/guides&tutorials/instagram-lead-finder"
+              "fr/guides&tutorials/conversations"
             ]
           },
           {
-            "group": "⚙️ Integrations & Paramètres",
+            "group": "⚙️ Intégrations & Paramètres",
             "pages": [
               "fr/integrations&settings/integrations",
-              "fr/integrations&settings/settings&profile"
+              "fr/integrations&settings/settings&profile",
+              "fr/guides&tutorials/zapier"
             ]
           },
           {
-            "group": "📚 Resources",
+            "group": "🛡️ Sécurité & Conformité",
+            "pages": [
+              "fr/quickstart/instagram-security"
+            ]
+          },
+          {
+            "group": "📚 Ressources",
             "pages": [
               "fr/resources/pricing",
               "fr/resources/prompt",
+              "fr/quickstart/best_campaigns",
               "fr/resources/faq"
             ]
           }
@@ -118,8 +129,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Integrations",
-      "href": "https://app.orsay.ai/integrations"
+      "label": "Go to Orsay",
+      "href": "https://orsay.fr"
     }
   },
   "footer": {
