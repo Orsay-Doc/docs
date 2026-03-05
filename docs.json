@@ -24,7 +24,8 @@
           {
             "group": "🚀 Getting Started",
             "pages": [
-              "en/quickstart/instagram",
+              "en/quickstart/instagram-outbound",
+              "en/quickstart/instagram-inbound",
               "en/quickstart/whatsapp"
             ]
           },
@@ -76,7 +77,8 @@
           {
             "group": "🚀 Démarrage rapide",
             "pages": [
-              "fr/quickstart/instagram",
+              "fr/quickstart/instagram-outbound",
+              "fr/quickstart/instagram-inbound",
               "fr/quickstart/whatsapp"
             ]
           },
