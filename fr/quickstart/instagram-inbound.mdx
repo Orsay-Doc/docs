@@ -19,6 +19,27 @@ Orsay AI capture les leads entrants avec des réponses instantanées en DM et de
 - **Réponse à une Story**
 - **Commentaire sur vos publications**
 
+## Mots-clés & Ciblage de publications (Réponse aux Stories & Commentaires)
+
+Pour les triggers **Réponse à une Story** et **Commentaire**, vous pouvez affiner le déclenchement d'une séquence avec des **mots-clés** et du **ciblage de publications/stories** :
+
+| Type de séquence | Mots-clés | Publications/Stories ciblées | Comportement |
+|---|---|---|---|
+| **Globale** | Aucun | Aucune | Se déclenche sur tous les commentaires/réponses (par défaut) |
+| **Spécifique (mots-clés)** | ✅ Définis | Aucune | Se déclenche uniquement si le texte contient un mot-clé |
+| **Ciblée (publication/story)** | Optionnel | ✅ Définies | Se déclenche uniquement pour les publications/stories sélectionnées |
+
+<Info>
+**Priorité de déclenchement :** Lorsqu'un commentaire ou une réponse à une story arrive, les séquences sont évaluées dans cet ordre :
+1. **Séquences ciblées (publication/story)** — vérifiées en premier. Si la séquence a des mots-clés, le texte doit aussi contenir un mot-clé.
+2. **Séquences spécifiques (mots-clés)** — vérifiées ensuite. Le premier mot-clé trouvé déclenche la séquence.
+3. **Séquence globale** — utilisée en dernier recours si aucune autre séquence ne correspond.
+</Info>
+
+<Tip>
+**Exemple d'utilisation :** Créez une séquence avec les mots-clés "prix" et "tarif" pour orienter les demandes de prix vers un agent spécialisé, tandis qu'une séquence globale gère tous les autres commentaires avec un agent généraliste.
+</Tip>
+
 ## Configuration Inbound (seule l'étape 1 diffère)
 
 ### Inbound Étape 1 :
@@ -59,6 +80,17 @@ Lorsqu'une réponse est faite à une story Instagram, cette action est déclench
     - **Sélectionnez votre compte :** Sélectionnez le compte Instagram.
     </ResponseField>
 
+    <ResponseField name="Mots-clés (optionnel) :">
+    - **Ajoutez des mots-clés** pour en faire une **séquence spécifique**. Elle ne se déclenchera que si la réponse à la story contient l'un de ces mots-clés.
+    - Si aucun mot-clé n'est ajouté, c'est une **séquence globale** qui se déclenche sur toutes les réponses aux stories.
+    - Les mots-clés sont **insensibles à la casse** et fonctionnent en **logique OU** (n'importe quel mot-clé déclenche la séquence).
+    </ResponseField>
+
+    <ResponseField name="Stories ciblées (optionnel) :">
+    - **Sélectionnez des stories actives spécifiques** pour limiter la séquence aux réponses sur ces stories uniquement.
+    - Si aucune story n'est sélectionnée, la séquence se déclenche pour les réponses sur **toutes** les stories actives.
+    </ResponseField>
+
     <ResponseField name="Template :">
     - Message / Contenu*
     - Continuer
@@ -87,6 +119,17 @@ Lorsqu'un commentaire est fait sur une publication Instagram, cette action est d
 
     <ResponseField name="Compte :">
     - **Sélectionnez votre compte :** Sélectionnez le compte Instagram.
+    </ResponseField>
+
+    <ResponseField name="Mots-clés (optionnel) :">
+    - **Ajoutez des mots-clés** pour en faire une **séquence spécifique**. Elle ne se déclenchera que si le commentaire contient l'un de ces mots-clés.
+    - Si aucun mot-clé n'est ajouté, c'est une **séquence globale** qui se déclenche sur tous les commentaires.
+    - Les mots-clés sont **insensibles à la casse** et fonctionnent en **logique OU** (n'importe quel mot-clé déclenche la séquence).
+    </ResponseField>
+
+    <ResponseField name="Publications ciblées (optionnel) :">
+    - **Sélectionnez des publications spécifiques** pour limiter la séquence aux commentaires sur ces publications uniquement.
+    - Si aucune publication n'est sélectionnée, la séquence se déclenche pour les commentaires sur **toutes** les publications.
     </ResponseField>
 
     <ResponseField name="Template :">

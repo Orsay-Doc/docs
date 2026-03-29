@@ -60,7 +60,15 @@ Select your support
   
     <img style={{ borderRadius: "0.5rem" }} src="/image_s_i_i/2.png" />
   
-    Only for **"Story reply"** and **"Comment"**.
+    Only for **"Story reply"** and **"Comment"**:
+
+    - **(Optional) Add trigger keywords** to create a **specific sequence**. The sequence will only trigger when the comment or story reply contains one of those keywords. If no keywords are added, it becomes a **global sequence** that triggers on every incoming comment or story reply. Keywords are case-insensitive and matched with OR logic.
+
+    - **(Optional) Select target posts or stories** to scope the sequence to specific content. If no posts/stories are selected, the sequence applies to all of them.
+
+    <Tip>
+    **Matching priority:** Post/story-scoped sequences are checked first, then keyword-specific sequences, then the global (no-keyword) sequence as a fallback.
+    </Tip>
 
     - Create your template message and click on "continue".
 
