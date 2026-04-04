@@ -1,0 +1,77 @@
+---
+title: "📣 Campaigns"
+description: "Send broadcast messages to your leads with Orsay Campaigns"
+---
+
+The **Campaigns** feature lets you send a personalized message to multiple leads at once — perfect for announcements, promotions, or re-engagement.
+
+## Getting started
+
+- Click on **"Campaigns"** in the left sidebar
+- Select the channels and lead statuses you want to target
+- Write your message, then send
+
+## Step 1 — Select your filters
+
+Choose which leads to reach by selecting:
+
+- **Channels**: Instagram, WhatsApp, or both
+- **Lead classification**: Positive, Negative, Engaged, Undetermined, or all
+
+Only leads matching **all** selected filters will appear in the list.
+
+## Step 2 — Write your message
+
+Type your broadcast message in the text area. You can personalize it using variables:
+
+| Variable | Replaced by |
+|---|---|
+| `{{firstname}}` | Lead's first name |
+| `{{lastname}}` | Lead's last name |
+| `{{username}}` | Lead's Instagram/WhatsApp username |
+
+Click the variable buttons below the text area to insert them directly.
+
+<Tip>
+  A live preview is shown on the right so you can see exactly what a lead will receive.
+</Tip>
+
+## Step 3 — Select or exclude leads
+
+Two modes are available:
+
+<AccordionGroup>
+  <Accordion title="Send to all (default)">
+    By default, the campaign targets **all matching leads**. You can exclude specific leads by unchecking them in the list.
+  </Accordion>
+  <Accordion title="Pick manually">
+    Switch to manual mode to hand-pick exactly which leads should receive the message. Use the search bar and "Select all" / "Deselect all" buttons to speed things up.
+  </Accordion>
+</AccordionGroup>
+
+## Step 4 — Send
+
+Click the **"Send to X lead(s)"** button. You'll see a confirmation toast with:
+
+- How many leads received the message
+- How many leads were **skipped** (if any)
+
+## Messaging window limits
+
+Meta enforces messaging windows on both channels. Leads whose last inbound message is too old will be automatically skipped:
+
+| Channel | Window | Reason |
+|---|---|---|
+| **WhatsApp** | 24 hours | Free-form text is only allowed within 24h of the lead's last message. Outside this window, only pre-approved template messages can be sent. |
+| **Instagram** | 24 hours (7 days with HUMAN_AGENT approval) | Instagram's standard messaging window is 24h. If your Meta app has the `human_agent` permission approved, this extends to 7 days. |
+
+<Warning>
+  Leads outside the messaging window are silently skipped — they will **not** receive the message and will not appear as failed. The skip count is shown in the confirmation toast.
+</Warning>
+
+## Best practices
+
+- **Test with a small group first** — send to 2-3 leads manually before broadcasting to everyone.
+- **Keep messages short and personal** — use `{{firstname}}` to avoid generic-sounding blasts.
+- **Avoid external links on Instagram** — Instagram may flag or suppress messages containing URLs sent via the API.
+- **Check your lead list** — make sure the filters match the audience you intend to reach.

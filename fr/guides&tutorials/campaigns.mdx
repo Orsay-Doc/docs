@@ -1,0 +1,77 @@
+---
+title: "📣 Campagnes"
+description: "Envoyez des messages broadcast à vos leads avec Orsay Campaigns"
+---
+
+La fonctionnalité **Campagnes** vous permet d'envoyer un message personnalisé à plusieurs leads en une seule fois — idéal pour les annonces, promotions ou relances.
+
+## Pour commencer
+
+- Cliquez sur **"Campagnes"** dans le menu latéral gauche
+- Sélectionnez les canaux et les statuts de leads que vous souhaitez cibler
+- Rédigez votre message, puis envoyez
+
+## Étape 1 — Sélectionnez vos filtres
+
+Choisissez les leads à atteindre en sélectionnant :
+
+- **Canaux** : Instagram, WhatsApp, ou les deux
+- **Classification des leads** : Positif, Négatif, Engagé, Indéterminé, ou tous
+
+Seuls les leads correspondant à **tous** les filtres sélectionnés apparaîtront dans la liste.
+
+## Étape 2 — Rédigez votre message
+
+Tapez votre message broadcast dans la zone de texte. Vous pouvez le personnaliser avec des variables :
+
+| Variable | Remplacée par |
+|---|---|
+| `{{firstname}}` | Prénom du lead |
+| `{{lastname}}` | Nom du lead |
+| `{{username}}` | Nom d'utilisateur Instagram/WhatsApp du lead |
+
+Cliquez sur les boutons de variables sous la zone de texte pour les insérer directement.
+
+<Tip>
+  Un aperçu en direct est affiché à droite pour voir exactement ce que le lead recevra.
+</Tip>
+
+## Étape 3 — Sélectionnez ou excluez des leads
+
+Deux modes sont disponibles :
+
+<AccordionGroup>
+  <Accordion title="Envoyer à tous (par défaut)">
+    Par défaut, la campagne cible **tous les leads correspondants**. Vous pouvez exclure des leads spécifiques en les décochant dans la liste.
+  </Accordion>
+  <Accordion title="Sélection manuelle">
+    Passez en mode manuel pour choisir exactement quels leads doivent recevoir le message. Utilisez la barre de recherche et les boutons "Tout sélectionner" / "Tout désélectionner" pour aller plus vite.
+  </Accordion>
+</AccordionGroup>
+
+## Étape 4 — Envoyez
+
+Cliquez sur le bouton **"Envoyer à X lead(s)"**. Vous verrez une notification de confirmation avec :
+
+- Le nombre de leads ayant reçu le message
+- Le nombre de leads **ignorés** (le cas échéant)
+
+## Limites de la fenêtre de messagerie
+
+Meta impose des fenêtres de messagerie sur les deux canaux. Les leads dont le dernier message entrant est trop ancien sont automatiquement ignorés :
+
+| Canal | Fenêtre | Raison |
+|---|---|---|
+| **WhatsApp** | 24 heures | Les messages en texte libre ne sont autorisés que dans les 24h suivant le dernier message du lead. En dehors de cette fenêtre, seuls les messages template pré-approuvés peuvent être envoyés. |
+| **Instagram** | 24 heures (7 jours avec approbation HUMAN_AGENT) | La fenêtre standard d'Instagram est de 24h. Si votre app Meta a la permission `human_agent` approuvée, elle s'étend à 7 jours. |
+
+<Warning>
+  Les leads en dehors de la fenêtre de messagerie sont ignorés silencieusement — ils ne recevront **pas** le message et n'apparaîtront pas comme échoués. Le nombre de leads ignorés est affiché dans la notification de confirmation.
+</Warning>
+
+## Bonnes pratiques
+
+- **Testez d'abord avec un petit groupe** — envoyez à 2-3 leads manuellement avant de broadcaster à tout le monde.
+- **Gardez les messages courts et personnels** — utilisez `{{firstname}}` pour éviter les messages génériques.
+- **Évitez les liens externes sur Instagram** — Instagram peut signaler ou supprimer les messages contenant des URLs envoyés via l'API.
+- **Vérifiez votre liste de leads** — assurez-vous que les filtres correspondent à l'audience que vous souhaitez atteindre.
