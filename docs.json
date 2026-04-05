@@ -22,15 +22,21 @@
             ]
           },
           {
-            "group": "🚀 Getting Started",
+            "group": "📋 Pages & Tabs",
             "pages": [
-              "en/quickstart/instagram-outbound",
-              "en/quickstart/instagram-inbound",
-              "en/quickstart/whatsapp"
+              "en/overview/pages"
             ]
           },
           {
-            "group": "🤖 Core Features",
+            "group": "🎯 Goals",
+            "pages": [
+              "en/goals/grow-instagram",
+              "en/goals/whatsapp-leads",
+              "en/goals/instagram-community"
+            ]
+          },
+          {
+            "group": "🤖 Features",
             "pages": [
               "en/guides&tutorials/instagram-lead-finder",
               "en/guides&tutorials/agents",
@@ -76,15 +82,21 @@
             ]
           },
           {
-            "group": "🚀 Démarrage rapide",
+            "group": "📋 Pages & Onglets",
             "pages": [
-              "fr/quickstart/instagram-outbound",
-              "fr/quickstart/instagram-inbound",
-              "fr/quickstart/whatsapp"
+              "fr/overview/pages"
             ]
           },
           {
-            "group": "🤖 Fonctionnalités principales",
+            "group": "🎯 Objectifs",
+            "pages": [
+              "fr/goals/grow-instagram",
+              "fr/goals/whatsapp-leads",
+              "fr/goals/instagram-community"
+            ]
+          },
+          {
+            "group": "🤖 Fonctionnalités",
             "pages": [
               "fr/guides&tutorials/instagram-lead-finder",
               "fr/guides&tutorials/agents",
