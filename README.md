@@ -10,8 +10,7 @@
 
 2. **Start the dev server** from this directory:
 
-   ```bash
-   mintlify dev
+   ```npx mint dev
    ```
 
    The site will be available at **http://localhost:3000**.

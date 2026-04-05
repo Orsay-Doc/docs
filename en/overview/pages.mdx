@@ -1,0 +1,129 @@
+---
+title: "Pages & Tabs"
+description: "Overview of every page in Orsay and what you can do in each one"
+---
+
+## 1. Conversations
+
+Where your team monitors and manages all inbound/outbound AI-driven conversations.
+
+- Filterable conversation list with 4 classification tabs: **Positive**, **Negative**, **Engaged**, **Undetermined**
+- Real-time updates — new messages appear instantly and reorder the list
+- Select a conversation to view the full message thread in a side panel
+- Lead details and feedback visible alongside the conversation
+- Infinite scroll pagination
+- Responsive: stacked layout on mobile, split panel on desktop
+
+---
+
+## 2. Analytics
+
+A metrics dashboard for conversation performance.
+
+- Date range picker (defaults to today)
+- Sequence filter to drill into specific campaigns
+- Auto-refreshes every 30 seconds
+- Metrics cards: Total Leads, Total Responded, Positive / Negative / Engaged / No Answer counts and percentages, Response Rate, Positive Rate
+
+---
+
+## 3. Lead Finder Analytics
+
+Instagram lead generation analytics with detailed action tracking.
+
+**Two tabs:**
+
+- **Summary** — Metrics for the selected account and date range:
+  - Leads Found, Leads Followed, Leads Contacted, Posts Liked
+  - Qualified Leads Ratio, Follow-Back Ratio, Response Rate
+  - Follower Evolution chart
+
+- **History** — A real-time action log showing individual follow, contact, and like events
+
+**Other features:**
+
+- Instagram account selector — switch between connected Lead Finder accounts
+- Account status header showing warm-up progress and ramp-up info
+- Blacklist management — view/add/remove blacklisted Instagram usernames
+- Date range + sequence filtering
+- Paginated leads table (50 per page)
+
+---
+
+## 4. Agents
+
+Manage the AI agents that power your conversations.
+
+**Two tabs:**
+
+- **Conversational** — List of active AI agents. Each can be edited, configured, or deleted. Agents handle and respond to leads.
+- **Filtering** (coming soon) — Agents for classifying leads before contacting them.
+
+Sub-pages: Create agent, Edit agent (for both conversational and filtering).
+
+---
+
+## 5. Sequences
+
+Build and manage message sequences — multi-step outreach flows sent to leads.
+
+- Search sequences by name
+- List with status (active/inactive), trigger type, and channel (WhatsApp / Instagram)
+- Duplicate or delete sequences
+- **Create sequence** button — manual builder
+- **AI Builder** button — AI-assisted sequence creation
+
+---
+
+## 6. Campaigns
+
+Send bulk messages to filtered groups of leads.
+
+**Left panel — Filters & Message:**
+
+- Filter by channel (Instagram, WhatsApp)
+- Filter by classification (Positive, Negative, Engaged, Undetermined)
+- Message editor with variable insertion (`{{firstname}}`, `{{lastname}}`, `{{username}}`)
+- Live message preview
+- Send to All or Pick Manually mode
+
+**Right panel — Lead List:**
+
+- Searchable list of matching leads
+- Avatar, name/username/phone, channel badge, classification badge
+- Checkbox selection per lead
+- Select All / Deselect All
+- Lead count (selected / total)
+
+---
+
+## 7. Integrations
+
+Connect and manage third-party platforms.
+
+| Integration | Description |
+|---|---|
+| **Instagram** | Connect your Instagram account for DM conversations |
+| **Lead Generation** | Connect an Instagram account for automated lead scraping |
+| **WhatsApp** | Connect via WhatsApp Business API for messaging |
+| **Zapier** | Trigger workflows from Orsay events |
+| **Make** | Workflow automation |
+| **Import Leads** | Bulk CSV lead upload (if enabled) |
+
+Each card shows connection status and links to a dedicated connect/manage page.
+
+---
+
+## 8. Conversation Improvements
+
+AI-powered quality review system that audits conversations and flags issues.
+
+- Status filter tabs: Pending, Approved, Dismissed, All
+- **Run Review** button — triggers an AI scan of the last 24 hours of conversations (rate-limited)
+- Shows last run time
+- Review cards displaying:
+  - Lead name, severity (HIGH / MEDIUM / LOW), type (QUALITY, GUARDRAIL, TONE), channel, status
+  - The problematic message (highlighted)
+  - The AI-suggested fix/rule
+- Actions: Approve (assign to an agent), Dismiss, Cancel (revert approval)
+- Link to view the full conversation

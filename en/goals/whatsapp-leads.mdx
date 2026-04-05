@@ -1,0 +1,171 @@
+---
+title: "Contact All Your Leads on WhatsApp"
+description: "Set up WhatsApp on Orsay to contact and qualify leads automatically"
+---
+
+Use Orsay to automate your prospecting, qualification, and follow-ups directly on WhatsApp. Chat with leads instantly, book calls automatically, and keep your pipeline full.
+
+---
+
+## Step 1 — Connect your WhatsApp account
+
+<Note>
+**Two ways to connect WhatsApp:** You can either create a new WhatsApp Business account or connect your own existing one.
+</Note>
+
+<AccordionGroup>
+  <Accordion title="Option A: Create a new WhatsApp Business account">
+    1. Go to **Integrations** → **WhatsApp**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/1.0.png" />
+    2. **Create a new profile** (add a name + profile picture)
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/2.0.png" />
+    3. Click **Connect a new WhatsApp number**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/3.0.png" />
+    4. You will be redirected to Facebook — approve the first pages, then select your **Business Manager**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/4.0.png" />
+    5. Create a new **WhatsApp Business Account**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/5.0.png" />
+    6. Create a name in the format: **"Name - Your Company"**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/6.0.png" />
+    7. Add a **phone number** (not connected to any WhatsApp yet — we recommend **On Off Business** to get a number easily)
+    8. Validate the phone number with a **2FA code**
+  </Accordion>
+
+  <Accordion title="Option B: Connect your existing WhatsApp Business">
+    <Warning>
+    This method only works if you use **WhatsApp Business** (not a personal account).
+    </Warning>
+
+    1. Go to **Integrations** → **WhatsApp**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/1.jpeg" />
+    2. **Create a new profile** (add a name + profile picture)
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/2.jpeg" />
+    3. Click **"Connect WhatsApp number"**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/3.jpeg" />
+    4. You will be redirected to Facebook — approve the initial pages, then select your **Business Manager**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/4.jpeg" />
+    5. Select **"Connect with existing WhatsApp Business App"**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/5.jpeg" />
+    6. Enter your phone number
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/6.jpeg" />
+    7. Scan the QR code
+    8. Validate with a **2FA code** and confirm
+  </Accordion>
+
+  <Accordion title="Validate the phone number">
+    1. Go to **https://business.facebook.com/billing_hub**
+    2. Select the business you just added a phone number to → go to **WhatsApp** and add a **payment method**
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/1.1.png" />
+    3. Click the **"TEST"** button to validate your phone number — input your personal WhatsApp and click **SEND**. If you receive a message, you're all set.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/2.1.png" />
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Step 2 — Create a template message
+
+Before creating your sequence, you need a **template message** — this is the first message sent to your leads on WhatsApp.
+
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_2/1.png" />
+
+---
+
+## Step 3 — Create your AI agent
+
+You need an AI agent that will handle conversations with your leads once they respond.
+
+[See how to create an AI agent](/en/guides&tutorials/agents)
+
+---
+
+## Step 4 — Create a sequence
+
+1. Go to **Sequences** and click **Create Sequence**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/1.0.png" />
+2. Select **WhatsApp**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/2.0.png" />
+3. Choose a trigger type:
+
+| Trigger | When it fires |
+|---|---|
+| **Message received** | Each time a new lead sends a message to your number |
+| **Contact created** | For any new lead not already assigned to another sequence |
+| **Contact subscribed to sequence** | For leads specifically assigned to this sequence (used with CSV imports & Zapier) |
+
+4. Click **"+"** to add a new step
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/3.png" />
+5. Select your **WhatsApp account**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/4.png" />
+6. Select your **template message**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/5.png" />
+7. Select the **Agent**, set **Response Delay**, add **follow-ups** if needed, then click **Confirm**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/6.png" />
+8. **Toggle on** the sequence and **publish** it
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/7.png" />
+
+---
+
+## Step 5 — Connect Zapier to your lead source
+
+If you get leads from external sources (Facebook Ads, landing pages, CRM, etc.), connect Zapier so every new lead automatically flows into your WhatsApp sequence.
+
+### How to set it up
+
+1. Go to **Integrations** → click **Connect Zapier**
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/1.png" />
+
+2. In Zapier, click **+ Create** to start a new Zap
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/2.png" />
+
+3. Choose your **lead source** (Facebook Lead Ads, ClickFunnels, systeme.io, or any compatible platform)
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/3.png" />
+
+4. Select **Create Lead for Sequence** as the Orsay action — this adds each lead directly into a specific sequence
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/4.png" />
+
+5. Map the fields: **First Name**, **Last Name**, **Phone Number**
+
+6. Select the relevant **Organization** and **Sequence**
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/6.png" />
+
+<Tip>
+You can find a sequence ID by clicking next to the sequence name in the Sequences page.
+<img style={{ borderRadius: "0.5rem" }} src="/image_zapier/5.png" />
+</Tip>
+
+From now on, every lead captured from your external sources will automatically flow into Orsay and be placed into the correct WhatsApp sequence.
+
+---
+
+## Step 6 (optional) — Send a bulk campaign via CSV
+
+If you have an existing list of leads, you can upload them all at once:
+
+1. Go to **Integrations** → click **Bulk Leads** → **Upload Files**
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_5/1.png" />
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_5/2.png" />
+
+2. Import your CSV file:
+   - Fill in the **country** ("France" if French)
+   - Map **first name** and **phone number** columns
+   - Select the right **sequence**
+   - Click **Upload File**
+
+<Info>
+To upload a CSV, you need a sequence with trigger type `CONTACT_SUBSCRIBED_TO_SEQUENCE`.
+</Info>
+
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_5/3.png" />
+<img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_5/4.png" />
+
+3. Set up **auto-run schedule**:
+   - Select the upload sequence
+   - Set the number of leads to enter per batch
+   - Click **Update Schedule**
+
+---
+
+<Note>
+If you need help, Orsay's support team is here for you! Reach out on [WhatsApp](https://wa.me/33780905889) for quick and personalized assistance.
+</Note>

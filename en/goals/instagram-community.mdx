@@ -1,0 +1,129 @@
+---
+title: "Reply to DM, Story reply and comments with AI"
+description: "Automatically respond to DMs, story replies, and comments from your Instagram audience"
+---
+
+Orsay AI captures incoming leads with instant DM responses and automated follow-ups that convert your Instagram community into booked appointments. This works for people who **comment on your posts**, **reply to your stories**, or **send you a DM**.
+
+<Info>
+Inbound sequences have **no daily limits** — unlike outbound, you can handle unlimited incoming interactions.
+</Info>
+
+---
+
+## Step 1 — Connect your Instagram account
+
+1. Go to **Integrations** in the left sidebar
+2. Click **Instagram** → **Connect Instagram**
+3. Follow the connection flow to link your Instagram account
+
+This is the standard Instagram connection (not Lead Generation) — it allows Orsay to read and respond to your DMs, story replies, and comments.
+
+---
+
+## Step 2 — Create your AI agent
+
+Before setting up your sequence, create an AI agent that will handle conversations with incoming leads.
+
+[See how to create an AI agent](/en/guides&tutorials/agents)
+
+---
+
+## Step 3 — Create an inbound sequence
+
+Go to **Sequences** → **Create Sequence** → Select **Instagram** → Choose an **Inbound** trigger.
+
+You can create separate sequences for each trigger type:
+
+### Message received
+
+Triggers when someone sends you a direct message.
+
+<Expandable title="Setup steps">
+  1. Click **+** → **Add action step**
+  2. **Select your Instagram account**
+  3. **Select your AI agent**
+  4. **Contact people with existing conversation history:** Choose **YES** to respond to everyone, or **NO** to only respond to new people you haven't interacted with before
+  5. **Answer delay:** Add a delay before the agent responds to make it feel natural
+  6. **Follow-ups:** Automatically follow up with leads who've engaged but gone quiet
+  7. Click **Confirm**
+</Expandable>
+
+---
+
+### Story reply
+
+Triggers when someone replies to one of your Instagram stories.
+
+<Expandable title="Setup steps">
+  1. Click **+** → **Add action step**
+  2. **Select your Instagram account**
+
+  3. **(Optional) Add trigger keywords** to make this a **keyword-specific sequence**:
+     - The sequence will only trigger when the story reply contains one of those keywords
+     - If no keywords are added, it becomes a **global sequence** that triggers on all story replies
+     - Keywords are **case-insensitive** and use **OR logic** (any keyword match triggers it)
+
+  4. **(Optional) Select target stories** to limit the sequence to replies on specific active stories only. If no stories are selected, it triggers for all stories.
+
+  5. **Write your template message** — this is the first message sent to the person. You can include a **link** or a **button** in this message.
+
+  6. **Select your AI agent**
+  7. **Contact people with existing conversation history:** Choose **YES** or **NO** to control whether you respond to people you've already interacted with
+  8. **Answer delay** and **Follow-ups** settings
+  9. Click **Confirm**
+</Expandable>
+
+---
+
+### Comment on your posts
+
+Triggers when someone comments on one of your Instagram posts.
+
+<Expandable title="Setup steps">
+  1. Click **+** → **Add action step**
+  2. **Select your Instagram account**
+
+  3. **(Optional) Add trigger keywords** to make this a **keyword-specific sequence**:
+     - The sequence will only trigger when the comment contains one of those keywords
+     - If no keywords are added, it becomes a **global sequence** that triggers on all comments
+     - Keywords are **case-insensitive** and use **OR logic**
+
+  4. **(Optional) Select target posts** to limit the sequence to comments on specific posts only. If no posts are selected, it triggers for all posts.
+
+  5. **Write your template message** — this is the DM sent to the person who commented. You can include a **link** or a **button** in the message.
+
+  6. **Select your AI agent**
+  7. **Contact people with existing conversation history:** Choose **YES** or **NO**
+  8. **Answer delay** and **Follow-ups** settings
+  9. Click **Confirm**
+</Expandable>
+
+---
+
+## How keywords and targeting work together
+
+You can combine keywords and post/story targeting to create highly specific sequences:
+
+| Sequence Type | Keywords | Target Posts/Stories | Behavior |
+|---|---|---|---|
+| **Global** | None | None | Triggers on all comments/replies (fallback) |
+| **Keyword-specific** | Set | None | Triggers only when text contains a keyword |
+| **Post/Story-scoped** | Optional | Set | Triggers only for selected posts/stories |
+
+<Info>
+**Matching priority:** When a comment or story reply arrives, sequences are evaluated in this order:
+1. **Post/Story-scoped sequences** — checked first
+2. **Keyword-specific sequences** — checked next
+3. **Global sequence** — used as fallback
+</Info>
+
+<Tip>
+**Example:** Create a keyword sequence with "price" and "pricing" to route pricing inquiries to a specialized agent, while a global sequence handles all other comments with a general-purpose agent.
+</Tip>
+
+---
+
+<Note>
+If you need help, Orsay's support team is here for you! Reach out on [WhatsApp](https://wa.me/33780905889) for quick and personalized assistance.
+</Note>
