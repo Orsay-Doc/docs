@@ -1,0 +1,18 @@
+---
+title: "Conversation Improvements"
+description: "AI-powered quality review system that audits conversations and flags issues"
+---
+
+AI-powered quality review system that audits conversations and flags issues.
+
+<img style={{ borderRadius: "0.5rem" }} src="/image_overview/conversation-improvements.png" />
+
+- Status filter tabs: Pending, Approved, Dismissed, All
+- **Run Review** button — triggers an AI scan of the last 24 hours of conversations (rate-limited)
+- Shows last run time
+- Review cards displaying:
+  - Lead name, severity (HIGH / MEDIUM / LOW), type (QUALITY, GUARDRAIL, TONE), channel, status
+  - The problematic message (highlighted)
+  - The AI-suggested fix/rule
+- Actions: Approve (assign to an agent), Dismiss, Cancel (revert approval)
+- Link to view the full conversation

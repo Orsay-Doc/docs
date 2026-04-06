@@ -24,7 +24,14 @@
           {
             "group": "📋 Pages & Tabs",
             "pages": [
-              "en/overview/pages"
+              "en/overview/conversations",
+              "en/overview/analytics",
+              "en/overview/lead-finder-analytics",
+              "en/overview/agents-page",
+              "en/overview/sequences-page",
+              "en/overview/campaigns-page",
+              "en/overview/integrations-page",
+              "en/overview/conversation-improvements"
             ]
           },
           {
@@ -84,7 +91,14 @@
           {
             "group": "📋 Pages & Onglets",
             "pages": [
-              "fr/overview/pages"
+              "fr/overview/conversations",
+              "fr/overview/analytics",
+              "fr/overview/lead-finder-analytics",
+              "fr/overview/agents-page",
+              "fr/overview/sequences-page",
+              "fr/overview/campaigns-page",
+              "fr/overview/integrations-page",
+              "fr/overview/conversation-improvements"
             ]
           },
           {
