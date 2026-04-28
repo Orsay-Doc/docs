@@ -1,0 +1,61 @@
+---
+title: "3. Créer votre séquence"
+description: "Construisez des séquences inbound pour DMs, réponses aux stories et commentaires Instagram — avec routing par mots-clés."
+---
+
+Une **séquence** Instagram inbound se déclenche automatiquement à chaque interaction. Vous pouvez créer une séquence par type de déclencheur, ou utiliser les **mots-clés** pour router différents sujets vers différents agents.
+
+## Trois déclencheurs inbound
+
+| Déclencheur | Se lance quand |
+|---|---|
+| **Message reçu** | Quelqu'un envoie un DM à votre compte |
+| **Story reply** | Quelqu'un répond à une de vos stories |
+| **Comment** | Quelqu'un commente un de vos posts |
+
+## Construire une séquence
+
+<Steps>
+  <Step title="Créez une nouvelle séquence">
+    Allez dans **Sequences** → **Create sequence**, donnez-lui un nom, et sélectionnez **Instagram**.
+  </Step>
+  <Step title="Choisissez un déclencheur inbound">
+    Choisissez **Message reçu**, **Story reply** ou **Comment**.
+  </Step>
+  <Step title="Ajoutez la première étape d'action">
+    Cliquez sur **+** et **Add action step**, puis sélectionnez votre compte Instagram.
+  </Step>
+  <Step title="(Optionnel) Ajoutez du routing par mots-clés">
+    Pour **Story reply** et **Comment**, vous pouvez ajouter des **mots-clés déclencheurs** :
+    - La séquence se lance **uniquement quand** le commentaire/réponse contient l'un des mots-clés
+    - Insensible à la casse, logique OU
+    - Sans mots-clés, la séquence est **globale** et se déclenche sur tous les commentaires/réponses
+
+    Vous pouvez aussi **scoper la séquence à des posts ou stories spécifiques** — utile quand un post a une intention très différente des autres.
+
+    <Tip>
+    **Priorité de matching :** les séquences scopées (post/story) tournent en premier, puis les séquences à mots-clés, puis la séquence globale en fallback.
+    </Tip>
+  </Step>
+  <Step title="Rédigez le message template">
+    C'est la **première réponse** envoyée. Vous pouvez inclure un lien ou un bouton. Personnalisez avec `{{first_name}}`, `{{last_name}}`.
+  </Step>
+  <Step title="Attachez l'agent">
+    Choisissez l'agent. Réglez le **délai de réponse**, choisissez si vous voulez répondre aux personnes avec qui vous avez déjà parlé, et ajoutez des **relances** pour les leads silencieux.
+  </Step>
+  <Step title="Publiez">
+    Activez et publiez. La séquence est live.
+  </Step>
+</Steps>
+
+## Exemple de routing par mots-clés [#keyword-routing]
+
+Un coach a un post Instagram : *« Mettez 🔥 si vous voulez les tarifs. »* Il construit :
+- Une **séquence à mots-clés** avec `tarif, prix, fire, feu` → route vers l'**agent commercial** qui envoie l'offre.
+- Une **séquence globale** → route tout le reste vers l'**agent conversation** qui engage simplement.
+
+→ Entrée changelog : [Flows par mots-clés pour Instagram](/fr/changelog#instagram-keyword-flows)
+
+## Étape suivante
+
+→ [4. Gérer les conversations](/fr/instagram-inbound/4-conversations)

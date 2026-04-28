@@ -1,77 +1,62 @@
 ---
 title: "📣 Campagnes"
-description: "Envoyez des messages broadcast à vos leads avec Orsay Campaigns"
+description: "Envoyez un message en masse en une fois — y compris un message vocal — à des leads WhatsApp filtrés."
 ---
 
-La fonctionnalité **Campagnes** vous permet d'envoyer un message personnalisé à plusieurs leads en une seule fois — idéal pour les annonces, promotions ou relances.
+Une **Campagne** est un envoi en masse one-shot à des leads WhatsApp existants. Contrairement à une séquence (qui tourne en continu sur un déclencheur), une campagne part **une seule fois**, vers l'audience que vous sélectionnez, avec le message que vous écrivez.
 
-## Pour commencer
+<Note>
+**WhatsApp uniquement.** Les campagnes fonctionnent sur WhatsApp Personnel et l'API WhatsApp Business. C'est l'outil parfait pour broadcaster quelque chose *maintenant* (un lancement, un événement, une promo) — et particulièrement puissant pour envoyer un **message vocal en premier contact**.
+</Note>
 
-- Cliquez sur **"Campagnes"** dans le menu latéral gauche
-- Sélectionnez les canaux et les statuts de leads que vous souhaitez cibler
-- Rédigez votre message, puis envoyez
+## Quand utiliser une Campagne vs une Séquence
 
-## Étape 1 — Sélectionnez vos filtres
-
-Choisissez les leads à atteindre en sélectionnant :
-
-- **Canaux** : Instagram, WhatsApp, ou les deux
-- **Classification des leads** : Positif, Négatif, Engagé, Indéterminé, ou tous
-
-Seuls les leads correspondant à **tous** les filtres sélectionnés apparaîtront dans la liste.
-
-## Étape 2 — Rédigez votre message
-
-Tapez votre message broadcast dans la zone de texte. Vous pouvez le personnaliser avec des variables :
-
-| Variable | Remplacée par |
+| Utilisez une **Séquence** quand… | Utilisez une **Campagne** quand… |
 |---|---|
-| `{{firstname}}` | Prénom du lead |
-| `{{lastname}}` | Nom du lead |
-| `{{username}}` | Nom d'utilisateur Instagram/WhatsApp du lead |
+| Vous voulez une automatisation continue, basée sur déclencheur (chaque nouveau lead entre dans le flow) | Vous voulez un envoi unique vers une liste définie |
+| Chaque lead est traité individuellement, à son rythme | Tous les leads reçoivent le message en même temps |
+| Le premier message est un template qui tourne en permanence | Vous annoncez quelque chose *maintenant* |
 
-Cliquez sur les boutons de variables sous la zone de texte pour les insérer directement.
+## Envoyer une Campagne audio sur WhatsApp
 
-<Tip>
-  Un aperçu en direct est affiché à droite pour voir exactement ce que le lead recevra.
-</Tip>
+Le use case phare : ouvrir une campagne avec un **message vocal** pour que les leads entendent votre vraie voix avant tout texte.
 
-## Étape 3 — Sélectionnez ou excluez des leads
+<Steps>
+  <Step title="Ouvrez Campagnes">
+    Dans la barre latérale, cliquez sur **Campaigns** → **+ Nouvelle campagne**.
+  </Step>
+  <Step title="Filtrez votre audience">
+    Sur le panneau de gauche, affinez qui reçoit la campagne :
+    - **Canal** — choisissez WhatsApp Personnel ou WhatsApp Business
+    - **Classification** — Positif / Négatif / Engagé / Indéterminé
+    - Recherchez par nom, téléphone, ou username
 
-Deux modes sont disponibles :
+    Le panneau de droite se met à jour en direct avec les leads correspondants. Sélectionnez tout, ou choisissez manuellement avec les cases à cocher.
+  </Step>
+  <Step title="Composez le message">
+    Dans l'éditeur de message :
+    - Basculez le type de message sur **🎙️ Message vocal**.
+    - **Enregistrez** directement dans l'éditeur ou **importez** un fichier audio (max 25 Mo ; MP3, M4A, WAV, OGG, AAC, WebM).
+    - Ajoutez optionnellement un message texte de suivi envoyé juste après le vocal.
+    - Personnalisez le texte avec `{{first_name}}`, `{{last_name}}`, `{{username}}`.
 
-<AccordionGroup>
-  <Accordion title="Envoyer à tous (par défaut)">
-    Par défaut, la campagne cible **tous les leads correspondants**. Vous pouvez exclure des leads spécifiques en les décochant dans la liste.
-  </Accordion>
-  <Accordion title="Sélection manuelle">
-    Passez en mode manuel pour choisir exactement quels leads doivent recevoir le message. Utilisez la barre de recherche et les boutons "Tout sélectionner" / "Tout désélectionner" pour aller plus vite.
-  </Accordion>
-</AccordionGroup>
+    L'aperçu en direct à droite montre le message exact que chaque lead recevra.
+  </Step>
+  <Step title="Envoyez ou planifiez">
+    Cliquez sur **Envoyer maintenant** pour broadcaster tout de suite, ou **Planifier** pour fixer une date/heure future.
+  </Step>
+</Steps>
 
-## Étape 4 — Envoyez
+## Campagnes texte uniquement
 
-Cliquez sur le bouton **"Envoyer à X lead(s)"**. Vous verrez une notification de confirmation avec :
+Le vocal n'est pas obligatoire — vous pouvez envoyer une campagne texte exactement de la même façon (sautez l'étape vocal dans l'éditeur). Mêmes filtres, mêmes variables, même planification.
 
-- Le nombre de leads ayant reçu le message
-- Le nombre de leads **ignorés** (le cas échéant)
+## Après la campagne
 
-## Limites de la fenêtre de messagerie
+Chaque réponse atterrit dans [Conversations](/fr/personal-whatsapp/5-conversations) et est gérée par l'agent assigné (ou par vous si vous reprenez la main). Suivez taux d'ouverture, taux de réponse et taux positif dans [Analytics](/fr/overview/analytics).
 
-Meta impose des fenêtres de messagerie sur les deux canaux. Les leads dont le dernier message entrant est trop ancien sont automatiquement ignorés :
+## Import de leads en masse (CSV)
 
-| Canal | Fenêtre | Raison |
-|---|---|---|
-| **WhatsApp** | 24 heures | Les messages en texte libre ne sont autorisés que dans les 24h suivant le dernier message du lead. En dehors de cette fenêtre, seuls les messages template pré-approuvés peuvent être envoyés. |
-| **Instagram** | 24 heures (7 jours avec approbation HUMAN_AGENT) | La fenêtre standard d'Instagram est de 24h. Si votre app Meta a la permission `human_agent` approuvée, elle s'étend à 7 jours. |
+Si votre audience n'est pas encore dans Orsay, uploadez un CSV via **Intégrations → Bulk Leads → Upload Files**. Puis lancez une Campagne sur les leads fraîchement importés.
 
-<Warning>
-  Les leads en dehors de la fenêtre de messagerie sont ignorés silencieusement — ils ne recevront **pas** le message et n'apparaîtront pas comme échoués. Le nombre de leads ignorés est affiché dans la notification de confirmation.
-</Warning>
-
-## Bonnes pratiques
-
-- **Testez d'abord avec un petit groupe** — envoyez à 2-3 leads manuellement avant de broadcaster à tout le monde.
-- **Gardez les messages courts et personnels** — utilisez `{{firstname}}` pour éviter les messages génériques.
-- **Évitez les liens externes sur Instagram** — Instagram peut signaler ou supprimer les messages contenant des URLs envoyés via l'API.
-- **Vérifiez votre liste de leads** — assurez-vous que les filtres correspondent à l'audience que vous souhaitez atteindre.
+→ Pour une automatisation continue sur chaque nouveau lead, utilisez plutôt une [séquence WhatsApp](/fr/personal-whatsapp/3-sequence).

@@ -1,0 +1,51 @@
+---
+title: "3. Créer votre séquence"
+description: "Construisez le flow automatisé qui atteint vos leads sur WhatsApp personnel — y compris des messages vocaux comme premier template."
+---
+
+Une **séquence** est le flow automatisé qui se déclenche dès qu'un lead entre dans le funnel : elle envoie le premier message, passe la conversation à l'agent, et lance des relances si le lead devient silencieux.
+
+## Construire une séquence WhatsApp Personnel
+
+<Steps>
+  <Step title="Créez une nouvelle séquence">
+    Allez dans **Sequences** → **Create sequence**. Donnez-lui un nom.
+  </Step>
+  <Step title="Choisissez WhatsApp Personnel">
+    Sélectionnez **WhatsApp Personnel** comme canal, puis choisissez votre déclencheur :
+    - **Message reçu** — se lance quand un lead vous écrit en premier
+    - **Contact subscribed to sequence** — se lance quand un lead est ajouté (CSV, Zapier, ou manuel)
+  </Step>
+  <Step title="Configurez la première étape (le template)">
+    La première étape est le **message template** — la toute première chose que voit le lead. Avec WhatsApp Personnel, vous avez le choix :
+    - **Texte** — écrivez une accroche personnalisée (supporte `{{first_name}}`, `{{last_name}}`).
+    - **🎙️ Message vocal** — enregistrez directement dans l'éditeur ou importez un fichier (max 25 Mo ; MP3, M4A, WAV, OGG, AAC, WebM). Le vocal est envoyé **avant** le texte.
+
+    <Tip>
+    Les vocaux sur la première étape boostent massivement le taux de réponse en cold outreach — votre lead entend votre voix avant même de lire quoi que ce soit.
+    </Tip>
+  </Step>
+  <Step title="Attachez l'agent">
+    Choisissez l'agent créé à l'étape 2. Réglez le **délai de réponse** (3-10 minutes paraît naturel) et décidez si l'agent doit répondre aux personnes avec qui vous avez déjà parlé.
+  </Step>
+  <Step title="Ajoutez des relances (optionnel)">
+    Configurez des relances automatiques — elles ré-engagent les leads qui ont répondu une fois puis ont disparu. Réglez combien de temps attendre avant chaque relance.
+  </Step>
+  <Step title="Activez et publiez">
+    Activez la séquence avec le toggle puis cliquez sur **Publish**. La séquence est maintenant live — chaque lead correspondant entre automatiquement.
+  </Step>
+</Steps>
+
+## Le vocal comme template [#voice-message-template]
+
+Uniquement sur WhatsApp Personnel, la **première étape d'action** peut être un vocal. Les étapes suivantes restent en texte et délais comme d'habitude. C'est le levier le plus impactant de WhatsApp Personnel.
+
+→ Entrée changelog : [Vocaux dans les séquences WhatsApp perso](/fr/changelog#personal-whatsapp-audio)
+
+## Pas de fenêtre de 24h
+
+Contrairement à l'API WhatsApp Business, **WhatsApp Personnel n'a aucune fenêtre de 24h pour répondre**. Vous et l'agent pouvez envoyer des messages quand vous voulez, même plusieurs jours après le dernier message du lead.
+
+## Étape suivante
+
+→ [4. Connecter Zapier](/fr/personal-whatsapp/4-zapier)

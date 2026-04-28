@@ -1,77 +1,62 @@
 ---
 title: "📣 Campaigns"
-description: "Send broadcast messages to your leads with Orsay Campaigns"
+description: "Send a one-off bulk message — including a voice message — to filtered WhatsApp leads."
 ---
 
-The **Campaigns** feature lets you send a personalized message to multiple leads at once — perfect for announcements, promotions, or re-engagement.
+A **Campaign** is a one-shot bulk send to existing WhatsApp leads. Unlike a sequence (which runs continuously on a trigger), a campaign goes out **once**, to the audience you select, with the message you write.
 
-## Getting started
+<Note>
+**WhatsApp only.** Campaigns work on personal WhatsApp and the WhatsApp Business API. They are the right tool when you want to broadcast something *now* (a launch, an event, a promo) — and especially powerful for sending a **voice message as the first contact**.
+</Note>
 
-- Click on **"Campaigns"** in the left sidebar
-- Select the channels and lead statuses you want to target
-- Write your message, then send
+## When to use a Campaign vs a Sequence
 
-## Step 1 — Select your filters
-
-Choose which leads to reach by selecting:
-
-- **Channels**: Instagram, WhatsApp, or both
-- **Lead classification**: Positive, Negative, Engaged, Undetermined, or all
-
-Only leads matching **all** selected filters will appear in the list.
-
-## Step 2 — Write your message
-
-Type your broadcast message in the text area. You can personalize it using variables:
-
-| Variable | Replaced by |
+| Use a **Sequence** when… | Use a **Campaign** when… |
 |---|---|
-| `{{firstname}}` | Lead's first name |
-| `{{lastname}}` | Lead's last name |
-| `{{username}}` | Lead's Instagram/WhatsApp username |
+| You want continuous, trigger-based automation (every new lead enters the flow) | You want a one-time blast to a defined list |
+| Each lead is processed individually, on their own clock | Every lead receives the message at the same time |
+| The first message is a template that runs forever | You're announcing something *now* |
 
-Click the variable buttons below the text area to insert them directly.
+## Send an audio-first Campaign on WhatsApp
 
-<Tip>
-  A live preview is shown on the right so you can see exactly what a lead will receive.
-</Tip>
+The headline use case: open a campaign with a **voice message** so leads hear your real voice before any text.
 
-## Step 3 — Select or exclude leads
+<Steps>
+  <Step title="Open Campaigns">
+    In the sidebar, click **Campaigns** → **+ New campaign**.
+  </Step>
+  <Step title="Filter your audience">
+    On the left panel, narrow down who receives the campaign:
+    - **Channel** — pick Personal WhatsApp or WhatsApp Business
+    - **Classification** — Positive / Negative / Engaged / Undetermined
+    - Search by name, phone, or username
 
-Two modes are available:
+    The right panel updates live with matching leads. Select all, or pick manually with the checkboxes.
+  </Step>
+  <Step title="Compose the message">
+    In the message editor:
+    - Switch the message type to **🎙️ Voice message**.
+    - **Record** directly in the editor or **upload** an audio file (max 25 MB; MP3, M4A, WAV, OGG, AAC, WebM).
+    - Optionally add a follow-up text message that goes out right after the voice note.
+    - Personalize text with `{{first_name}}`, `{{last_name}}`, `{{username}}`.
 
-<AccordionGroup>
-  <Accordion title="Send to all (default)">
-    By default, the campaign targets **all matching leads**. You can exclude specific leads by unchecking them in the list.
-  </Accordion>
-  <Accordion title="Pick manually">
-    Switch to manual mode to hand-pick exactly which leads should receive the message. Use the search bar and "Select all" / "Deselect all" buttons to speed things up.
-  </Accordion>
-</AccordionGroup>
+    The live preview on the right shows the exact message each lead will receive.
+  </Step>
+  <Step title="Send or schedule">
+    Click **Send now** to broadcast immediately, or **Schedule** to set a future date/time.
+  </Step>
+</Steps>
 
-## Step 4 — Send
+## Text-only campaigns
 
-Click the **"Send to X lead(s)"** button. You'll see a confirmation toast with:
+Voice isn't mandatory — you can send a text-only Campaign exactly the same way (skip the voice step in the editor). All the same filters, variables, and scheduling apply.
 
-- How many leads received the message
-- How many leads were **skipped** (if any)
+## After the campaign
 
-## Messaging window limits
+Every reply lands in [Conversations](/en/personal-whatsapp/5-conversations) and is handled by the assigned agent (or by you if you take over). Track open rate, response rate, and positive rate in [Analytics](/en/overview/analytics).
 
-Meta enforces messaging windows on both channels. Leads whose last inbound message is too old will be automatically skipped:
+## Bulk lead import (CSV)
 
-| Channel | Window | Reason |
-|---|---|---|
-| **WhatsApp** | 24 hours | Free-form text is only allowed within 24h of the lead's last message. Outside this window, only pre-approved template messages can be sent. |
-| **Instagram** | 24 hours (7 days with HUMAN_AGENT approval) | Instagram's standard messaging window is 24h. If your Meta app has the `human_agent` permission approved, this extends to 7 days. |
+If your audience isn't yet in Orsay, upload a CSV first via **Integrations → Bulk Leads → Upload Files**. Then run a Campaign on the freshly imported leads.
 
-<Warning>
-  Leads outside the messaging window are silently skipped — they will **not** receive the message and will not appear as failed. The skip count is shown in the confirmation toast.
-</Warning>
-
-## Best practices
-
-- **Test with a small group first** — send to 2-3 leads manually before broadcasting to everyone.
-- **Keep messages short and personal** — use `{{firstname}}` to avoid generic-sounding blasts.
-- **Avoid external links on Instagram** — Instagram may flag or suppress messages containing URLs sent via the API.
-- **Check your lead list** — make sure the filters match the audience you intend to reach.
+→ For ongoing automation on every new lead, use a [WhatsApp sequence](/en/personal-whatsapp/3-sequence) instead.

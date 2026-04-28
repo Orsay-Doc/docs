@@ -1,0 +1,51 @@
+---
+title: "3. Create your sequence"
+description: "Build the automated flow that reaches your leads on personal WhatsApp — including voice messages as the first template."
+---
+
+A **sequence** is the automated flow that runs whenever a lead enters the funnel: it sends the first message, hands the conversation to the agent, and runs follow-ups if the lead goes silent.
+
+## Build a Personal WhatsApp sequence
+
+<Steps>
+  <Step title="Create a new sequence">
+    Go to **Sequences** → **Create sequence**. Give it a name.
+  </Step>
+  <Step title="Pick Personal WhatsApp">
+    Select **Personal WhatsApp** as the channel, then choose your trigger:
+    - **Message received** — runs when a lead messages your number first
+    - **Contact subscribed to sequence** — runs when a lead is added (CSV upload, Zapier, or manual)
+  </Step>
+  <Step title="Configure the first action step (the template)">
+    The first step is the **template message** — the very first thing the lead sees. With Personal WhatsApp, you have a choice:
+    - **Text** — write a personalized opener (supports `{{first_name}}`, `{{last_name}}`).
+    - **🎙️ Voice message** — record directly in the editor or upload a file (max 25 MB; MP3, M4A, WAV, OGG, AAC, WebM). The voice message is sent **before** the text.
+
+    <Tip>
+    Voice messages on the first step dramatically lift reply rate on cold outreach — your lead hears your voice before they read anything.
+    </Tip>
+  </Step>
+  <Step title="Attach the agent">
+    Pick the agent you created in step 2. Set the **answer delay** (3–10 minutes feels natural) and decide whether the agent should reply to people you've already talked to.
+  </Step>
+  <Step title="Add follow-ups (optional)">
+    Configure automatic follow-ups — these re-engage leads who replied once and went quiet. Set how long to wait before each follow-up.
+  </Step>
+  <Step title="Toggle on and publish">
+    Activate the sequence with the toggle and click **Publish**. The sequence is now live — every matching lead enters automatically.
+  </Step>
+</Steps>
+
+## Voice message as the template [#voice-message-template]
+
+Only on Personal WhatsApp, the **first action step** can be a voice note. Subsequent steps stay in text and delays as usual. This is the single highest-impact lever Personal WhatsApp gives you.
+
+→ Changelog entry: [Voice notes in personal WhatsApp sequences](/en/changelog#personal-whatsapp-audio)
+
+## No 24-hour window
+
+Unlike the WhatsApp Business API, **Personal WhatsApp has no 24-hour reply window**. You and the agent can send messages whenever you want, even days after the last lead message.
+
+## Next step
+
+→ [4. Connect Zapier](/en/personal-whatsapp/4-zapier)

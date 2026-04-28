@@ -1,0 +1,54 @@
+---
+title: "4. Connecter Zapier à Orsay"
+description: "Faites entrer les leads de Facebook Ads, landing pages ou n'importe quelle source directement dans votre séquence WhatsApp Business."
+---
+
+Si vos leads viennent de l'extérieur d'Orsay — Facebook Ads, ClickFunnels, systeme.io, votre CRM — connectez **Zapier** pour que chaque nouveau lead entre automatiquement dans votre séquence WhatsApp Business et reçoive le template approuvé en quelques minutes.
+
+## Comment ça marche
+
+Un Zap surveille votre source de leads. Quand un nouveau lead est capturé, Zapier appelle l'action **Create Lead for Sequence** d'Orsay, qui place le lead dans la séquence choisie. Le template approuvé de la séquence part, et l'agent prend le relais après la réponse du lead.
+
+## Configuration
+
+<Steps>
+  <Step title="Connectez Zapier dans Orsay">
+    Allez dans **Intégrations** → cliquez sur **Connect Zapier**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/1.png" />
+  </Step>
+  <Step title="Créez un nouveau Zap">
+    Dans Zapier, cliquez sur **+ Create** pour démarrer un nouveau Zap.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/2.png" />
+  </Step>
+  <Step title="Choisissez votre source de leads">
+    Choisissez la plateforme qui capture vos leads — **Facebook Lead Ads**, **ClickFunnels**, **systeme.io**, ou toute source compatible.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/3.png" />
+  </Step>
+  <Step title="Choisissez l'action Orsay">
+    Sélectionnez **Create Lead for Sequence** pour que chaque lead atterrisse directement dans une séquence WhatsApp Business spécifique.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/4.png" />
+  </Step>
+  <Step title="Mappez les champs">
+    Mappez **First Name**, **Last Name** et **Phone Number** depuis votre source vers les champs Orsay.
+  </Step>
+  <Step title="Choisissez organisation et séquence">
+    Sélectionnez l'**Organisation** et la **séquence WhatsApp Business** dans laquelle le lead doit entrer.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/6.png" />
+
+    <Tip>
+    Pour trouver un ID de séquence, cliquez à côté du nom de la séquence sur la page Sequences.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_zapier/5.png" />
+    </Tip>
+  </Step>
+  <Step title="Activez le Zap">
+    Une fois le Zap actif, chaque nouveau lead capturé par votre source entre dans Orsay et déclenche votre séquence WhatsApp Business avec le template approuvé.
+  </Step>
+</Steps>
+
+## Déclencheur requis
+
+La séquence WhatsApp Business sur laquelle vous pointez Zapier doit utiliser le déclencheur **Contact subscribed to sequence**. Ce déclencheur se lance à chaque nouveau lead reçu via Zapier (ou import CSV).
+
+## Étape suivante
+
+→ [5. Gérer les conversations](/fr/whatsapp-api/5-conversations)

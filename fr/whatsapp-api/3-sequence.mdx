@@ -1,0 +1,57 @@
+---
+title: "3. Créer votre séquence"
+description: "Construisez le flow automatisé qui ouvre des conversations sur WhatsApp Business — avec des templates approuvés."
+---
+
+Une **séquence** sur l'API WhatsApp Business commence toujours par un **message template approuvé** (règle Meta). Une fois que le lead a répondu, l'agent gère le reste de la conversation.
+
+## Construire une séquence WhatsApp Business
+
+<Steps>
+  <Step title="Créez une nouvelle séquence">
+    Allez dans **Sequences** → **Create sequence**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/1.0.png" />
+  </Step>
+  <Step title="Choisissez WhatsApp">
+    Sélectionnez **WhatsApp** comme canal.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/2.0.png" />
+  </Step>
+  <Step title="Choisissez un déclencheur">
+    | Déclencheur | Quand il se lance |
+    |---|---|
+    | **Message reçu** | À chaque fois qu'un nouveau lead écrit à votre numéro |
+    | **Contact créé** | Pour tout nouveau lead pas déjà dans une autre séquence |
+    | **Contact subscribed to sequence** | Pour les leads ajoutés à cette séquence (CSV ou Zapier) |
+  </Step>
+  <Step title="Ajoutez la première étape d'action">
+    Cliquez sur **+** et **Add action step**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/3.png" />
+    Sélectionnez votre **compte WhatsApp**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/4.png" />
+    Choisissez le **template approuvé** et sa langue.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/5.png" />
+  </Step>
+  <Step title="Attachez l'agent">
+    Choisissez l'agent. Réglez le **délai de réponse** et ajoutez des **relances** si besoin, puis cliquez sur **Confirm**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/6.png" />
+  </Step>
+  <Step title="Activez et publiez">
+    Activez la séquence avec le toggle et **publiez**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_3/7.png" />
+  </Step>
+</Steps>
+
+## La règle des 24 heures
+
+WhatsApp Business a une **fenêtre de 24h** pour répondre : après que le lead a répondu, l'agent peut écrire librement pendant 24h. Ensuite, vous devez envoyer un nouveau template approuvé pour rouvrir la conversation. Utilisez les **relances** dans la séquence pour planifier des ré-engagements basés sur templates au bon rythme.
+
+## Leads en masse via CSV ou Zapier
+
+Vous avez une liste existante ? Deux façons de les pousser dans une séquence :
+
+- **Upload CSV** — **Intégrations → Bulk Leads → Upload Files**. La séquence doit utiliser le déclencheur **Contact subscribed to sequence**.
+- **Zapier** — connectez votre source de leads (Facebook Ads, ClickFunnels, etc.) et routez chaque nouveau lead automatiquement. → couvert dans l'étape suivante.
+
+## Étape suivante
+
+→ [4. Connecter Zapier](/fr/whatsapp-api/4-zapier)
