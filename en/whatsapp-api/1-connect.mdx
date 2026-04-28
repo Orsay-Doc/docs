@@ -1,0 +1,81 @@
+---
+title: "1. Connect WhatsApp Business API"
+description: "Set up an official WhatsApp Business Account (WABA) with Orsay — verified, scaleable, with approved templates."
+---
+
+The WhatsApp Business API is Meta's official channel for businesses. It requires a **verified WhatsApp Business Account (WABA)** and **approved templates** for sending the first message — but in exchange, you get a green-tick checkmark, no daily message caps, and full Meta support.
+
+<Note>
+You have **two options**: create a brand-new WhatsApp Business account from scratch, or connect an existing WhatsApp Business app you already use.
+</Note>
+
+## Option A — Create a new WhatsApp Business account
+
+<Steps>
+  <Step title="Open Integrations → WhatsApp">
+    In the sidebar, click **Integrations** → **WhatsApp**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/1.0.png" />
+  </Step>
+  <Step title="Create a profile">
+    Add a name and profile picture, then click **Connect a new WhatsApp number**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/2.0.png" />
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/3.0.png" />
+  </Step>
+  <Step title="Approve in Facebook Business Manager">
+    You're redirected to Facebook. Approve the initial dialogs, then select your **Business Manager**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/4.0.png" />
+  </Step>
+  <Step title="Create a WhatsApp Business Account">
+    Click **Create a new WhatsApp Business Account**. Use a name in the format **"Name - Your Company"** (Meta requires this for approval).
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/5.0.png" />
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/6.0.png" />
+  </Step>
+  <Step title="Add a phone number">
+    Add a phone number that is **not currently linked to any WhatsApp account**. We recommend [On Off Business](https://onoffbusiness.com) to get a clean number quickly. Validate with the 2FA code sent to that number.
+  </Step>
+</Steps>
+
+## Option B — Connect an existing WhatsApp Business
+
+<Warning>
+This option only works if your phone uses the **WhatsApp Business** app — not a personal WhatsApp account. (For personal WhatsApp, use the [Personal WhatsApp channel](/en/personal-whatsapp/1-connect) instead.)
+</Warning>
+
+<Steps>
+  <Step title="Start the same flow">
+    Go to **Integrations** → **WhatsApp** → create a profile and click **Connect WhatsApp number**.
+  </Step>
+  <Step title="Pick existing app in Facebook">
+    In the Facebook flow, choose **Connect with existing WhatsApp Business App**.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/5.jpeg" />
+  </Step>
+  <Step title="Scan and validate">
+    Enter your phone number, scan the QR code, and validate with the 2FA code.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/num/6.jpeg" />
+  </Step>
+</Steps>
+
+## Validate the phone number for sending
+
+Before you can send messages, Meta requires a payment method on the WhatsApp Business Account.
+
+<Steps>
+  <Step title="Add a payment method">
+    Go to [business.facebook.com/billing_hub](https://business.facebook.com/billing_hub), select the right business, open **WhatsApp**, and add a card.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/1.1.png" />
+  </Step>
+  <Step title="Send a TEST message">
+    Click the **TEST** button, input your personal WhatsApp, and click **SEND**. If you receive the message, your account is fully ready.
+    <img style={{ borderRadius: "0.5rem" }} src="/image_whatsapp/step_1/2.1.png" />
+  </Step>
+</Steps>
+
+## Create your template messages
+
+Templates are the **only** way to start a conversation on the WhatsApp Business API (Meta's rule). Once a lead has replied, the agent can write freely for 24 hours.
+
+→ Create templates in **Integrations → WhatsApp → Templates**, submit for Meta approval (usually a few hours), then use them in your sequence.
+
+## Next step
+
+→ [2. Create an agent](/en/whatsapp-api/2-agent)

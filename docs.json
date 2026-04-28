@@ -22,59 +22,57 @@
             ]
           },
           {
-            "group": "📋 Pages & Tabs",
+            "group": "🆕 What's new",
             "pages": [
-              "en/overview/conversations",
-              "en/overview/analytics",
-              "en/overview/lead-finder-analytics",
-              "en/overview/agents-page",
-              "en/overview/sequences-page",
-              "en/overview/campaigns-page",
-              "en/overview/integrations-page",
-              "en/overview/conversation-improvements"
+              "en/changelog"
             ]
           },
           {
-            "group": "🎯 Goals",
+            "group": "📱 Personal WhatsApp",
             "pages": [
-              "en/goals/grow-instagram",
-              "en/goals/whatsapp-leads",
-              "en/goals/instagram-community"
+              "en/personal-whatsapp/1-connect",
+              "en/personal-whatsapp/2-agent",
+              "en/personal-whatsapp/3-sequence",
+              "en/personal-whatsapp/4-zapier",
+              "en/personal-whatsapp/5-conversations"
             ]
           },
           {
-            "group": "🤖 Features",
+            "group": "💼 WhatsApp Business API",
             "pages": [
-              "en/guides&tutorials/instagram-lead-finder",
+              "en/whatsapp-api/1-connect",
+              "en/whatsapp-api/2-agent",
+              "en/whatsapp-api/3-sequence",
+              "en/whatsapp-api/4-zapier",
+              "en/whatsapp-api/5-conversations"
+            ]
+          },
+          {
+            "group": "📸 Instagram (Inbound)",
+            "pages": [
+              "en/instagram-inbound/1-connect",
+              "en/instagram-inbound/2-agent",
+              "en/instagram-inbound/3-sequence",
+              "en/instagram-inbound/4-conversations"
+            ]
+          },
+          {
+            "group": "🤖 Core features",
+            "pages": [
               "en/guides&tutorials/agents",
-              "en/guides&tutorials/sequences",
-              "en/guides&tutorials/conversations",
+              "en/guides&tutorials/voice-cloning",
               "en/guides&tutorials/campaigns",
-              "en/guides&tutorials/voice-cloning"
-            ]
-          },
-          {
-            "group": "⚙️ Integrations & Settings",
-            "pages": [
-              "en/integrations&settings/integrations",
-              "en/integrations&settings/settings&profile",
-              "en/guides&tutorials/zapier"
-            ]
-          },
-          {
-            "group": "🛡️ Safety & Compliance",
-            "pages": [
-              "en/quickstart/instagram-security"
+              "en/overview/conversation-improvements",
+              "en/overview/analytics"
             ]
           },
           {
             "group": "📚 Resources",
             "pages": [
+              "en/resources/faq",
               "en/resources/pricing",
               "en/resources/prompt",
-              "en/template_prompt",
-              "en/quickstart/best_campaigns",
-              "en/resources/faq"
+              "en/template_prompt"
             ]
           }
         ]
@@ -90,58 +88,56 @@
             ]
           },
           {
-            "group": "📋 Pages & Onglets",
+            "group": "🆕 Nouveautés",
             "pages": [
-              "fr/overview/conversations",
-              "fr/overview/analytics",
-              "fr/overview/lead-finder-analytics",
-              "fr/overview/agents-page",
-              "fr/overview/sequences-page",
-              "fr/overview/campaigns-page",
-              "fr/overview/integrations-page",
-              "fr/overview/conversation-improvements"
+              "fr/changelog"
             ]
           },
           {
-            "group": "🎯 Objectifs",
+            "group": "📱 WhatsApp Personnel",
             "pages": [
-              "fr/goals/grow-instagram",
-              "fr/goals/whatsapp-leads",
-              "fr/goals/instagram-community"
+              "fr/personal-whatsapp/1-connect",
+              "fr/personal-whatsapp/2-agent",
+              "fr/personal-whatsapp/3-sequence",
+              "fr/personal-whatsapp/4-zapier",
+              "fr/personal-whatsapp/5-conversations"
             ]
           },
           {
-            "group": "🤖 Fonctionnalités",
+            "group": "💼 WhatsApp Business API",
             "pages": [
-              "fr/guides&tutorials/instagram-lead-finder",
+              "fr/whatsapp-api/1-connect",
+              "fr/whatsapp-api/2-agent",
+              "fr/whatsapp-api/3-sequence",
+              "fr/whatsapp-api/4-zapier",
+              "fr/whatsapp-api/5-conversations"
+            ]
+          },
+          {
+            "group": "📸 Instagram (Inbound)",
+            "pages": [
+              "fr/instagram-inbound/1-connect",
+              "fr/instagram-inbound/2-agent",
+              "fr/instagram-inbound/3-sequence",
+              "fr/instagram-inbound/4-conversations"
+            ]
+          },
+          {
+            "group": "🤖 Fonctionnalités clés",
+            "pages": [
               "fr/guides&tutorials/agents",
-              "fr/guides&tutorials/sequences",
-              "fr/guides&tutorials/conversations",
+              "fr/guides&tutorials/voice-cloning",
               "fr/guides&tutorials/campaigns",
-              "fr/guides&tutorials/voice-cloning"
-            ]
-          },
-          {
-            "group": "⚙️ Intégrations & Paramètres",
-            "pages": [
-              "fr/integrations&settings/integrations",
-              "fr/integrations&settings/settings&profile",
-              "fr/guides&tutorials/zapier"
-            ]
-          },
-          {
-            "group": "🛡️ Sécurité & Conformité",
-            "pages": [
-              "fr/quickstart/instagram-security"
+              "fr/overview/conversation-improvements",
+              "fr/overview/analytics"
             ]
           },
           {
             "group": "📚 Ressources",
             "pages": [
+              "fr/resources/faq",
               "fr/resources/pricing",
-              "fr/resources/prompt",
-              "fr/quickstart/best_campaigns",
-              "fr/resources/faq"
+              "fr/resources/prompt"
             ]
           }
         ]
@@ -154,6 +150,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "What's new",
+        "href": "https://docs.orsay.ai/en/changelog"
+      },
       {
         "label": "Support",
         "href": "https://wa.me/33780905889"

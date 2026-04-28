@@ -1,0 +1,61 @@
+---
+title: "3. Create your sequence"
+description: "Build inbound sequences for Instagram DMs, story replies, and comments — including keyword-based routing."
+---
+
+An Instagram inbound **sequence** runs automatically every time someone interacts with your account. You can create one sequence per trigger type, or use **keywords** to route different topics to different agents.
+
+## Three inbound triggers
+
+| Trigger | Fires when |
+|---|---|
+| **Message received** | Someone DMs your account |
+| **Story reply** | Someone replies to one of your stories |
+| **Comment** | Someone comments on one of your posts |
+
+## Build a sequence
+
+<Steps>
+  <Step title="Create a new sequence">
+    Go to **Sequences** → **Create sequence**, give it a name, and select **Instagram**.
+  </Step>
+  <Step title="Pick an inbound trigger">
+    Choose **Message received**, **Story reply**, or **Comment**.
+  </Step>
+  <Step title="Add the first action step">
+    Click **+** and **Add action step**, then select your Instagram account.
+  </Step>
+  <Step title="(Optional) Add keyword routing">
+    For **Story reply** and **Comment**, you can add **trigger keywords**:
+    - Sequence runs **only when** the comment/reply contains one of the keywords
+    - Case-insensitive, OR logic
+    - Without keywords, the sequence is **global** and runs on every comment/reply
+
+    You can also **scope the sequence to specific posts or stories** — useful when one post has very different intent from the others.
+
+    <Tip>
+    **Matching priority:** post/story-scoped sequences run first, then keyword sequences, then the global fallback.
+    </Tip>
+  </Step>
+  <Step title="Write the template message">
+    This is the **first reply** sent. You can include a link or a button. Personalize with `{{first_name}}`, `{{last_name}}`.
+  </Step>
+  <Step title="Attach the agent">
+    Pick the agent. Set **answer delay**, choose whether to reply to people you've already talked to, and add **follow-ups** for leads who go quiet.
+  </Step>
+  <Step title="Publish">
+    Toggle on and publish. The sequence is live.
+  </Step>
+</Steps>
+
+## Keyword routing example [#keyword-routing]
+
+A coach has one Instagram post titled *"Drop a 🔥 if you want my pricing."* They build:
+- A **keyword sequence** with `pricing, price, fire` → routes to the **sales agent** that sends the offer.
+- A **global sequence** → routes everything else to the **conversation agent** that simply engages.
+
+→ Changelog entry: [Keyword-based flows for Instagram](/en/changelog#instagram-keyword-flows)
+
+## Next step
+
+→ [4. Manage conversations](/en/instagram-inbound/4-conversations)
