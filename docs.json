@@ -12,6 +12,71 @@
   "navigation": {
     "dropdowns": [
       {
+        "dropdown": "🇫🇷 Français",
+        "icon": "earth",
+        "groups": [
+          {
+            "group": " ",
+            "pages": [
+              "fr/home"
+            ]
+          },
+          {
+            "group": "🆕 Nouveautés",
+            "pages": [
+              "fr/changelog"
+            ]
+          },
+          {
+            "group": "📱 WhatsApp Personnel",
+            "pages": [
+              "fr/personal-whatsapp/1-connect",
+              "fr/personal-whatsapp/2-agent",
+              "fr/personal-whatsapp/3-sequence",
+              "fr/personal-whatsapp/4-zapier",
+              "fr/personal-whatsapp/5-conversations"
+            ]
+          },
+          {
+            "group": "💼 WhatsApp Business API",
+            "pages": [
+              "fr/whatsapp-api/1-connect",
+              "fr/whatsapp-api/2-agent",
+              "fr/whatsapp-api/3-sequence",
+              "fr/whatsapp-api/4-zapier",
+              "fr/whatsapp-api/5-conversations"
+            ]
+          },
+          {
+            "group": "📸 Instagram (Inbound)",
+            "pages": [
+              "fr/instagram-inbound/1-connect",
+              "fr/instagram-inbound/2-agent",
+              "fr/instagram-inbound/3-sequence",
+              "fr/instagram-inbound/4-conversations"
+            ]
+          },
+          {
+            "group": "🤖 Fonctionnalités clés",
+            "pages": [
+              "fr/guides&tutorials/agents",
+              "fr/guides&tutorials/voice-cloning",
+              "fr/guides&tutorials/campaigns",
+              "fr/overview/conversation-improvements",
+              "fr/overview/analytics"
+            ]
+          },
+          {
+            "group": "📚 Ressources",
+            "pages": [
+              "fr/resources/faq",
+              "fr/resources/pricing",
+              "fr/resources/prompt"
+            ]
+          }
+        ]
+      },
+      {
         "dropdown": "🇬🇧 English",
         "icon": "earth",
         "groups": [
@@ -76,74 +141,19 @@
             ]
           }
         ]
-      },
-      {
-        "dropdown": "🇫🇷 Français",
-        "icon": "earth",
-        "groups": [
-          {
-            "group": " ",
-            "pages": [
-              "fr/home"
-            ]
-          },
-          {
-            "group": "🆕 Nouveautés",
-            "pages": [
-              "fr/changelog"
-            ]
-          },
-          {
-            "group": "📱 WhatsApp Personnel",
-            "pages": [
-              "fr/personal-whatsapp/1-connect",
-              "fr/personal-whatsapp/2-agent",
-              "fr/personal-whatsapp/3-sequence",
-              "fr/personal-whatsapp/4-zapier",
-              "fr/personal-whatsapp/5-conversations"
-            ]
-          },
-          {
-            "group": "💼 WhatsApp Business API",
-            "pages": [
-              "fr/whatsapp-api/1-connect",
-              "fr/whatsapp-api/2-agent",
-              "fr/whatsapp-api/3-sequence",
-              "fr/whatsapp-api/4-zapier",
-              "fr/whatsapp-api/5-conversations"
-            ]
-          },
-          {
-            "group": "📸 Instagram (Inbound)",
-            "pages": [
-              "fr/instagram-inbound/1-connect",
-              "fr/instagram-inbound/2-agent",
-              "fr/instagram-inbound/3-sequence",
-              "fr/instagram-inbound/4-conversations"
-            ]
-          },
-          {
-            "group": "🤖 Fonctionnalités clés",
-            "pages": [
-              "fr/guides&tutorials/agents",
-              "fr/guides&tutorials/voice-cloning",
-              "fr/guides&tutorials/campaigns",
-              "fr/overview/conversation-improvements",
-              "fr/overview/analytics"
-            ]
-          },
-          {
-            "group": "📚 Ressources",
-            "pages": [
-              "fr/resources/faq",
-              "fr/resources/pricing",
-              "fr/resources/prompt"
-            ]
-          }
-        ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/fr/home"
+    },
+    {
+      "source": "/index",
+      "destination": "/fr/home"
+    }
+  ],
   "logo": {
     "light": "/logo/orsay_ai_large.svg",
     "dark": "/logo/orsay_ai_large.svg"
