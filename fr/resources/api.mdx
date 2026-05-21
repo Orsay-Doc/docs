@@ -44,6 +44,57 @@ https://client.api.prod.orsay.ai/api/v1
 
 ## Endpoints
 
+### Lister les agents
+
+```bash
+GET /agents
+```
+
+Retourne tous les agents IA de votre organisation.
+
+**Réponse :**
+```json
+[
+  {
+    "id": "e5f6g7h8-...",
+    "name": "Agent Commercial",
+    "is_published": true
+  }
+]
+```
+
+---
+
+### Lister les profils
+
+```bash
+GET /profiles
+```
+
+Retourne tous les profils Instagram et WhatsApp connectés.
+
+**Réponse :**
+```json
+{
+  "instagram": [
+    {
+      "id": "12345678",
+      "username": "monbusiness",
+      "status": "CONNECTED"
+    }
+  ],
+  "whatsapp": [
+    {
+      "id": "abcd-1234-...",
+      "name": "Mon WhatsApp",
+      "status": "CONNECTED"
+    }
+  ]
+}
+```
+
+---
+
 ### Lister les séquences
 
 ```bash
