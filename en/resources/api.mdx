@@ -1,0 +1,270 @@
+---
+title: "🔑 REST API"
+description: "Programmatic access to Orsay via API key"
+---
+
+## Overview
+
+The Orsay REST API allows you to manage sequences programmatically from your own server. This is useful for:
+
+- Automating sequence creation from a VPS or cron job
+- Integrating Orsay into your existing pipeline (e.g., Instagram → DM sequence)
+- Building custom automations without going through the dashboard
+
+## Authentication
+
+All API requests require a **Bearer token** using your API key.
+
+```bash
+curl -X GET https://client.api.prod.orsay.ai/api/v1/sequences \
+  -H "Authorization: Bearer sk_live_your_api_key_here"
+```
+
+### Getting your API key
+
+1. Go to **Settings → API Keys** in the Orsay dashboard
+2. Click **Generate API Key**
+3. Copy the key immediately — it won't be shown again
+
+<Warning>
+Your API key gives full access to your organization's sequences. Keep it secret and never expose it in client-side code.
+</Warning>
+
+## Rate Limiting
+
+The API is rate-limited to **1 request per 30 seconds** per organization.
+
+If you exceed this limit, you'll receive a `429 Too Many Requests` response with a `Retry-After` header indicating how many seconds to wait.
+
+## Base URL
+
+```
+https://client.api.prod.orsay.ai/api/v1
+```
+
+## Endpoints
+
+### List Sequences
+
+```bash
+GET /sequences
+```
+
+Returns all sequences for your organization.
+
+**Response:**
+```json
+[
+  {
+    "id": "a1b2c3d4-...",
+    "name": "Welcome DM",
+    "trigger": "INSTAGRAM_MESSAGE",
+    "channel": "INSTAGRAM",
+    "active": true
+  }
+]
+```
+
+---
+
+### Get Sequence
+
+```bash
+GET /sequences/{sequence_id}
+```
+
+Returns full details of a specific sequence.
+
+**Response:**
+```json
+{
+  "id": "a1b2c3d4-...",
+  "name": "Welcome DM",
+  "trigger": "INSTAGRAM_MESSAGE",
+  "channel": "INSTAGRAM",
+  "active": true,
+  "type": "INBOUND",
+  "agent_id": "e5f6g7h8-...",
+  "profile_id": "12345",
+  "inbound_response_delay": 5,
+  "inbound_response_delay_unit": "MINUTES",
+  "flow": [
+    {
+      "delay": 0,
+      "delay_unit": "MINUTES",
+      "content": "Hello! How can I help you?",
+      "template_id": null,
+      "action": null
+    }
+  ]
+}
+```
+
+---
+
+### Create Sequence
+
+```bash
+POST /sequences
+```
+
+**Request body:**
+```json
+{
+  "name": "My New Sequence",
+  "trigger": "INSTAGRAM_MESSAGE",
+  "inbound_response_delay": 5,
+  "inbound_response_delay_unit": "MINUTES",
+  "agent_id": "e5f6g7h8-...",
+  "profile_id": "12345",
+  "active": false,
+  "flow": [
+    {
+      "delay": 0,
+      "delay_unit": "MINUTES",
+      "followup_delays": [
+        { "delay": 30, "delay_unit": "MINUTES" }
+      ]
+    }
+  ]
+}
+```
+
+**Required fields:**
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Name of the sequence |
+| `trigger` | string | Trigger type (see below) |
+
+**Optional fields:**
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `inbound_response_delay` | int | 5 | Delay before first response |
+| `inbound_response_delay_unit` | string | "MINUTES" | SECONDS, MINUTES, or HOURS |
+| `agent_id` | string | null | AI agent ID to use |
+| `profile_id` | string | null | Instagram or WhatsApp profile ID |
+| `active` | bool | false | Whether the sequence is active |
+| `flow` | array | [] | Flow steps definition |
+| `filtering_agent` | string | null | Filtering agent ID |
+| `should_continue_existing_conversations` | bool | false | Continue existing conversations |
+| `keywords` | array | null | Trigger keywords |
+| `target_accounts` | array | null | Target accounts for scraping |
+| `enable_agent_on_conversation` | bool | true | Enable AI agent on conversations |
+| `require_manual_approval` | bool | false | Require manual message approval |
+
+**Response (201):**
+```json
+{
+  "id": "new-sequence-uuid"
+}
+```
+
+---
+
+### Update Sequence
+
+```bash
+PUT /sequences/{sequence_id}
+```
+
+Only include the fields you want to update.
+
+**Request body:**
+```json
+{
+  "name": "Updated Name",
+  "active": true,
+  "inbound_response_delay": 10
+}
+```
+
+**Response:**
+```json
+{
+  "id": "a1b2c3d4-...",
+  "status": "updated"
+}
+```
+
+---
+
+### Delete Sequence
+
+```bash
+DELETE /sequences/{sequence_id}
+```
+
+**Response:**
+```json
+{
+  "status": "deleted"
+}
+```
+
+## Trigger Types
+
+| Trigger | Channel | Type |
+|---------|---------|------|
+| `INSTAGRAM_MESSAGE` | Instagram | Inbound |
+| `INSTAGRAM_COMMENT` | Instagram | Outbound |
+| `INSTAGRAM_STORY_REPLY` | Instagram | Inbound |
+| `INSTAGRAM_LEAD_FINDER_NEW_FOLLOWER` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_FOLLOWERS` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_NEW_LIKE` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_COMMENT` | Instagram | Outbound |
+| `WHATSAPP_MESSAGE` | WhatsApp | Inbound |
+| `CONTACT_CREATED` | WhatsApp | Outbound |
+| `CONTACT_SUBSCRIBED_TO_SEQUENCE` | WhatsApp | Outbound |
+
+## Error Codes
+
+| Code | Description |
+|------|-------------|
+| `401` | Invalid or missing API key |
+| `404` | Sequence not found |
+| `429` | Rate limit exceeded (1 req/30s) |
+| `400` | Invalid request (bad trigger, missing field, etc.) |
+
+## Example: Full Pipeline
+
+```python
+import requests
+import time
+
+API_KEY = "sk_live_your_key_here"
+BASE_URL = "https://client.api.prod.orsay.ai/api/v1"
+HEADERS = {"Authorization": f"Bearer {API_KEY}"}
+
+# 1. List sequences
+sequences = requests.get(f"{BASE_URL}/sequences", headers=HEADERS).json()
+print(f"Found {len(sequences)} sequences")
+
+# 2. Create a new sequence
+new_seq = requests.post(f"{BASE_URL}/sequences", headers=HEADERS, json={
+    "name": "Auto DM Pipeline",
+    "trigger": "INSTAGRAM_MESSAGE",
+    "inbound_response_delay": 2,
+    "inbound_response_delay_unit": "MINUTES",
+    "agent_id": "your-agent-id",
+    "profile_id": "your-instagram-profile-id",
+    "active": True,
+    "flow": [
+        {
+            "delay": 0,
+            "delay_unit": "MINUTES",
+            "followup_delays": [
+                {"delay": 30, "delay_unit": "MINUTES"},
+                {"delay": 120, "delay_unit": "MINUTES"}
+            ]
+        }
+    ]
+}).json()
+print(f"Created sequence: {new_seq['id']}")
+
+# 3. Update it later
+time.sleep(30)  # Respect rate limit
+requests.put(f"{BASE_URL}/sequences/{new_seq['id']}", headers=HEADERS, json={
+    "name": "Auto DM Pipeline v2",
+    "inbound_response_delay": 5,
+})
+```

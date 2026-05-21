@@ -71,7 +71,8 @@
             "pages": [
               "fr/resources/faq",
               "fr/resources/pricing",
-              "fr/resources/prompt"
+              "fr/resources/prompt",
+              "fr/resources/api"
             ]
           }
         ]
@@ -137,6 +138,7 @@
               "en/resources/faq",
               "en/resources/pricing",
               "en/resources/prompt",
+              "en/resources/api",
               "en/template_prompt"
             ]
           }

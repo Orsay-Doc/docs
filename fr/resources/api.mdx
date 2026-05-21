@@ -1,0 +1,270 @@
+---
+title: "🔑 API REST"
+description: "Accès programmatique à Orsay via clé API"
+---
+
+## Vue d'ensemble
+
+L'API REST Orsay vous permet de gérer vos séquences de manière programmatique depuis votre propre serveur. Cas d'usage :
+
+- Automatiser la création de séquences depuis un VPS ou un cron
+- Intégrer Orsay dans votre pipeline existant (ex : Instagram → DM séquence)
+- Construire des automatisations personnalisées sans passer par le dashboard
+
+## Authentification
+
+Toutes les requêtes API nécessitent un **Bearer token** avec votre clé API.
+
+```bash
+curl -X GET https://client.api.prod.orsay.ai/api/v1/sequences \
+  -H "Authorization: Bearer sk_live_votre_cle_api"
+```
+
+### Obtenir votre clé API
+
+1. Allez dans **Settings → API Keys** dans le dashboard Orsay
+2. Cliquez sur **Generate API Key**
+3. Copiez la clé immédiatement — elle ne sera plus affichée
+
+<Warning>
+Votre clé API donne un accès complet aux séquences de votre organisation. Gardez-la secrète et ne l'exposez jamais dans du code côté client.
+</Warning>
+
+## Rate Limiting
+
+L'API est limitée à **1 requête par 30 secondes** par organisation.
+
+Si vous dépassez cette limite, vous recevrez une réponse `429 Too Many Requests` avec un header `Retry-After` indiquant combien de secondes attendre.
+
+## URL de base
+
+```
+https://client.api.prod.orsay.ai/api/v1
+```
+
+## Endpoints
+
+### Lister les séquences
+
+```bash
+GET /sequences
+```
+
+Retourne toutes les séquences de votre organisation.
+
+**Réponse :**
+```json
+[
+  {
+    "id": "a1b2c3d4-...",
+    "name": "Welcome DM",
+    "trigger": "INSTAGRAM_MESSAGE",
+    "channel": "INSTAGRAM",
+    "active": true
+  }
+]
+```
+
+---
+
+### Obtenir une séquence
+
+```bash
+GET /sequences/{sequence_id}
+```
+
+Retourne les détails complets d'une séquence.
+
+**Réponse :**
+```json
+{
+  "id": "a1b2c3d4-...",
+  "name": "Welcome DM",
+  "trigger": "INSTAGRAM_MESSAGE",
+  "channel": "INSTAGRAM",
+  "active": true,
+  "type": "INBOUND",
+  "agent_id": "e5f6g7h8-...",
+  "profile_id": "12345",
+  "inbound_response_delay": 5,
+  "inbound_response_delay_unit": "MINUTES",
+  "flow": [
+    {
+      "delay": 0,
+      "delay_unit": "MINUTES",
+      "content": "Bonjour ! Comment puis-je vous aider ?",
+      "template_id": null,
+      "action": null
+    }
+  ]
+}
+```
+
+---
+
+### Créer une séquence
+
+```bash
+POST /sequences
+```
+
+**Corps de la requête :**
+```json
+{
+  "name": "Ma Nouvelle Séquence",
+  "trigger": "INSTAGRAM_MESSAGE",
+  "inbound_response_delay": 5,
+  "inbound_response_delay_unit": "MINUTES",
+  "agent_id": "e5f6g7h8-...",
+  "profile_id": "12345",
+  "active": false,
+  "flow": [
+    {
+      "delay": 0,
+      "delay_unit": "MINUTES",
+      "followup_delays": [
+        { "delay": 30, "delay_unit": "MINUTES" }
+      ]
+    }
+  ]
+}
+```
+
+**Champs requis :**
+| Champ | Type | Description |
+|-------|------|-------------|
+| `name` | string | Nom de la séquence |
+| `trigger` | string | Type de déclencheur (voir ci-dessous) |
+
+**Champs optionnels :**
+| Champ | Type | Défaut | Description |
+|-------|------|--------|-------------|
+| `inbound_response_delay` | int | 5 | Délai avant la première réponse |
+| `inbound_response_delay_unit` | string | "MINUTES" | SECONDS, MINUTES ou HOURS |
+| `agent_id` | string | null | ID de l'agent IA à utiliser |
+| `profile_id` | string | null | ID du profil Instagram ou WhatsApp |
+| `active` | bool | false | Si la séquence est active |
+| `flow` | array | [] | Définition des étapes du flow |
+| `filtering_agent` | string | null | ID de l'agent de filtrage |
+| `should_continue_existing_conversations` | bool | false | Continuer les conversations existantes |
+| `keywords` | array | null | Mots-clés déclencheurs |
+| `target_accounts` | array | null | Comptes cibles pour le scraping |
+| `enable_agent_on_conversation` | bool | true | Activer l'agent IA sur les conversations |
+| `require_manual_approval` | bool | false | Approbation manuelle requise |
+
+**Réponse (201) :**
+```json
+{
+  "id": "new-sequence-uuid"
+}
+```
+
+---
+
+### Modifier une séquence
+
+```bash
+PUT /sequences/{sequence_id}
+```
+
+Incluez uniquement les champs que vous souhaitez modifier.
+
+**Corps de la requête :**
+```json
+{
+  "name": "Nom Mis à Jour",
+  "active": true,
+  "inbound_response_delay": 10
+}
+```
+
+**Réponse :**
+```json
+{
+  "id": "a1b2c3d4-...",
+  "status": "updated"
+}
+```
+
+---
+
+### Supprimer une séquence
+
+```bash
+DELETE /sequences/{sequence_id}
+```
+
+**Réponse :**
+```json
+{
+  "status": "deleted"
+}
+```
+
+## Types de déclencheurs
+
+| Déclencheur | Canal | Type |
+|-------------|-------|------|
+| `INSTAGRAM_MESSAGE` | Instagram | Inbound |
+| `INSTAGRAM_COMMENT` | Instagram | Outbound |
+| `INSTAGRAM_STORY_REPLY` | Instagram | Inbound |
+| `INSTAGRAM_LEAD_FINDER_NEW_FOLLOWER` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_FOLLOWERS` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_NEW_LIKE` | Instagram | Outbound |
+| `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_COMMENT` | Instagram | Outbound |
+| `WHATSAPP_MESSAGE` | WhatsApp | Inbound |
+| `CONTACT_CREATED` | WhatsApp | Outbound |
+| `CONTACT_SUBSCRIBED_TO_SEQUENCE` | WhatsApp | Outbound |
+
+## Codes d'erreur
+
+| Code | Description |
+|------|-------------|
+| `401` | Clé API invalide ou manquante |
+| `404` | Séquence non trouvée |
+| `429` | Rate limit dépassé (1 req/30s) |
+| `400` | Requête invalide (mauvais trigger, champ manquant, etc.) |
+
+## Exemple : Pipeline complet
+
+```python
+import requests
+import time
+
+API_KEY = "sk_live_votre_cle"
+BASE_URL = "https://client.api.prod.orsay.ai/api/v1"
+HEADERS = {"Authorization": f"Bearer {API_KEY}"}
+
+# 1. Lister les séquences
+sequences = requests.get(f"{BASE_URL}/sequences", headers=HEADERS).json()
+print(f"{len(sequences)} séquences trouvées")
+
+# 2. Créer une nouvelle séquence
+new_seq = requests.post(f"{BASE_URL}/sequences", headers=HEADERS, json={
+    "name": "Pipeline Auto DM",
+    "trigger": "INSTAGRAM_MESSAGE",
+    "inbound_response_delay": 2,
+    "inbound_response_delay_unit": "MINUTES",
+    "agent_id": "votre-agent-id",
+    "profile_id": "votre-profil-instagram-id",
+    "active": True,
+    "flow": [
+        {
+            "delay": 0,
+            "delay_unit": "MINUTES",
+            "followup_delays": [
+                {"delay": 30, "delay_unit": "MINUTES"},
+                {"delay": 120, "delay_unit": "MINUTES"}
+            ]
+        }
+    ]
+}).json()
+print(f"Séquence créée : {new_seq['id']}")
+
+# 3. La modifier plus tard
+time.sleep(30)  # Respecter le rate limit
+requests.put(f"{BASE_URL}/sequences/{new_seq['id']}", headers=HEADERS, json={
+    "name": "Pipeline Auto DM v2",
+    "inbound_response_delay": 5,
+})
+```
