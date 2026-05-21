@@ -32,7 +32,7 @@ Votre clé API donne un accès complet aux séquences de votre organisation. Gar
 
 ## Rate Limiting
 
-L'API est limitée à **1 requête par 30 secondes** par organisation.
+L'API est limitée à **200 requêtes par heure** par organisation.
 
 Si vous dépassez cette limite, vous recevrez une réponse `429 Too Many Requests` avec un header `Retry-After` indiquant combien de secondes attendre.
 
@@ -222,7 +222,7 @@ DELETE /sequences/{sequence_id}
 |------|-------------|
 | `401` | Clé API invalide ou manquante |
 | `404` | Séquence non trouvée |
-| `429` | Rate limit dépassé (1 req/30s) |
+| `429` | Rate limit dépassé (200 req/heure) |
 | `400` | Requête invalide (mauvais trigger, champ manquant, etc.) |
 
 ## Exemple : Pipeline complet
@@ -262,7 +262,7 @@ new_seq = requests.post(f"{BASE_URL}/sequences", headers=HEADERS, json={
 print(f"Séquence créée : {new_seq['id']}")
 
 # 3. La modifier plus tard
-time.sleep(30)  # Respecter le rate limit
+time.sleep(1)  # Petit délai entre les requêtes
 requests.put(f"{BASE_URL}/sequences/{new_seq['id']}", headers=HEADERS, json={
     "name": "Pipeline Auto DM v2",
     "inbound_response_delay": 5,

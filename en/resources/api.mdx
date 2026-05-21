@@ -32,7 +32,7 @@ Your API key gives full access to your organization's sequences. Keep it secret 
 
 ## Rate Limiting
 
-The API is rate-limited to **1 request per 30 seconds** per organization.
+The API is rate-limited to **200 requests per hour** per organization.
 
 If you exceed this limit, you'll receive a `429 Too Many Requests` response with a `Retry-After` header indicating how many seconds to wait.
 
@@ -222,7 +222,7 @@ DELETE /sequences/{sequence_id}
 |------|-------------|
 | `401` | Invalid or missing API key |
 | `404` | Sequence not found |
-| `429` | Rate limit exceeded (1 req/30s) |
+| `429` | Rate limit exceeded (200 req/hour) |
 | `400` | Invalid request (bad trigger, missing field, etc.) |
 
 ## Example: Full Pipeline
@@ -262,7 +262,7 @@ new_seq = requests.post(f"{BASE_URL}/sequences", headers=HEADERS, json={
 print(f"Created sequence: {new_seq['id']}")
 
 # 3. Update it later
-time.sleep(30)  # Respect rate limit
+time.sleep(1)  # Small delay between requests
 requests.put(f"{BASE_URL}/sequences/{new_seq['id']}", headers=HEADERS, json={
     "name": "Auto DM Pipeline v2",
     "inbound_response_delay": 5,
