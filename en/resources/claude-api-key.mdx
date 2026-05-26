@@ -1,0 +1,85 @@
+---
+title: "🤖 Get a Claude API Key"
+description: "Step-by-step guide to create your Anthropic account and generate a Claude API key"
+---
+
+## Why a Claude API key?
+
+Orsay uses Claude (Anthropic's AI) to power your conversational agents. To connect your own Claude API key to Orsay, you need to create one in the Anthropic console.
+
+<Info>
+With your own API key, you control your usage directly with Anthropic.
+</Info>
+
+## Step 1 — Create an Anthropic account
+
+1. Go to [console.anthropic.com](https://console.anthropic.com)
+2. Click **Sign Up**
+3. Register with your email or via Google
+
+## Step 2 — Add credits
+
+Before you can generate an API key, you need to add credits to your account.
+
+1. In the console, go to **Billing** (left menu)
+2. Click **Add credits**
+3. Enter your credit card details and choose an amount
+
+<Tip>
+Start small ($5–$10) to test. You can top up at any time.
+</Tip>
+
+## Step 3 — Generate an API key
+
+1. In the console, go to **API Keys** (left menu)
+2. Click **Create Key**
+3. Give it a name (e.g., `Orsay`)
+4. Copy the key shown — **it won't be visible again**
+
+<Warning>
+Your API key starts with `sk-ant-...`. Never share it or commit it to a Git repository.
+</Warning>
+
+## Step 4 — Add the key to Orsay
+
+1. In Orsay, go to **Settings → Integrations**
+2. Paste your key in the **Claude API Key** field
+3. Click **Save**
+
+Your agents now use your own Claude key.
+
+## Choosing the right model
+
+Anthropic offers several Claude models. Here's an overview:
+
+| Model | Recommended use | Cost |
+|-------|----------------|------|
+| Claude Haiku | Fast replies, simple conversations | Cheapest |
+| Claude Sonnet | Quality / cost balance (recommended) | Medium |
+| Claude Opus | Complex tasks, advanced reasoning | Most expensive |
+
+For most Orsay use cases, **Claude Sonnet** is the best trade-off.
+
+## Monitor your usage
+
+In the Anthropic console, the **Usage** tab shows you:
+
+- Tokens consumed per day
+- Associated cost
+- Breakdown by model
+
+You can also set up **budget alerts** under **Billing → Budget & Alerts** to get notified when your usage exceeds a threshold.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="My key was lost or compromised — what should I do?">
+    Go to **API Keys** in the Anthropic console, delete the old key, then create a new one. Update the key in Orsay immediately.
+  </Accordion>
+  <Accordion title="Can I use the same key for multiple Orsay workspaces?">
+    Yes, technically you can — but we recommend creating a separate key per workspace to better isolate usage tracking.
+  </Accordion>
+  <Accordion title="Is there a free trial?">
+    Anthropic does not offer a free trial on the API. You need to add credits upfront, but the minimum is very low — a few dollars is enough to get started.
+  </Accordion>
+</AccordionGroup>

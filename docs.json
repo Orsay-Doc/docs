@@ -72,7 +72,8 @@
               "fr/resources/faq",
               "fr/resources/pricing",
               "fr/resources/prompt",
-              "fr/resources/api"
+              "fr/resources/api",
+              "fr/resources/claude-api-key"
             ]
           }
         ]
@@ -139,6 +140,7 @@
               "en/resources/pricing",
               "en/resources/prompt",
               "en/resources/api",
+              "en/resources/claude-api-key",
               "en/template_prompt"
             ]
           }

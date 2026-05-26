@@ -1,0 +1,85 @@
+---
+title: "🤖 Obtenir une clé API Claude"
+description: "Guide pas-à-pas pour créer votre compte Anthropic et générer une clé API Claude"
+---
+
+## Pourquoi une clé API Claude ?
+
+Orsay utilise Claude (l'IA d'Anthropic) pour alimenter vos agents conversationnels. Pour connecter votre propre clé API Claude à Orsay, vous devez en créer une sur la console Anthropic.
+
+<Info>
+Avec votre propre clé API, vous maîtrisez votre consommation directement chez Anthropic.
+</Info>
+
+## Étape 1 — Créer un compte Anthropic
+
+1. Rendez-vous sur [console.anthropic.com](https://console.anthropic.com)
+2. Cliquez sur **Sign Up**
+3. Inscrivez-vous avec votre email ou via Google
+
+## Étape 2 — Ajouter des crédits
+
+Avant de pouvoir générer une clé API, vous devez ajouter des crédits à votre compte.
+
+1. Dans la console, allez dans **Billing** (menu de gauche)
+2. Cliquez sur **Add credits**
+3. Renseignez votre carte bancaire et choisissez un montant
+
+<Tip>
+Commencez avec un petit montant (5–10 $) pour tester. Vous pouvez recharger à tout moment.
+</Tip>
+
+## Étape 3 — Générer une clé API
+
+1. Dans la console, allez dans **API Keys** (menu de gauche)
+2. Cliquez sur **Create Key**
+3. Donnez-lui un nom (ex : `Orsay`)
+4. Copiez la clé affichée — **elle ne sera plus visible ensuite**
+
+<Warning>
+Votre clé API commence par `sk-ant-...`. Ne la partagez jamais et ne la commitez pas dans un repo Git.
+</Warning>
+
+## Étape 4 — Ajouter la clé dans Orsay
+
+1. Dans Orsay, allez dans **Settings → Intégrations**
+2. Collez votre clé dans le champ **Claude API Key**
+3. Cliquez sur **Enregistrer**
+
+Vos agents utilisent maintenant votre propre clé Claude.
+
+## Choisir le bon modèle
+
+Anthropic propose plusieurs modèles Claude. Voici un aperçu :
+
+| Modèle | Usage recommandé | Coût |
+|--------|-----------------|------|
+| Claude Haiku | Réponses rapides, conversations simples | Le moins cher |
+| Claude Sonnet | Équilibre qualité / coût (recommandé) | Moyen |
+| Claude Opus | Tâches complexes, raisonnement avancé | Le plus cher |
+
+Pour la plupart des cas d'usage Orsay, **Claude Sonnet** est le meilleur compromis.
+
+## Surveiller votre consommation
+
+Dans la console Anthropic, l'onglet **Usage** vous montre :
+
+- Le nombre de tokens consommés par jour
+- Le coût associé
+- La répartition par modèle
+
+Vous pouvez aussi configurer des **alertes de budget** dans **Billing → Budget & Alerts** pour être notifié si votre consommation dépasse un seuil.
+
+## Questions fréquentes
+
+<AccordionGroup>
+  <Accordion title="Ma clé a été perdue ou compromise, que faire ?">
+    Allez dans **API Keys** sur la console Anthropic, supprimez l'ancienne clé, puis créez-en une nouvelle. Mettez à jour la clé dans Orsay immédiatement.
+  </Accordion>
+  <Accordion title="Puis-je utiliser la même clé pour plusieurs workspaces Orsay ?">
+    Oui, techniquement c'est possible — mais nous recommandons de créer une clé distincte par workspace pour mieux isoler la consommation.
+  </Accordion>
+  <Accordion title="Y a-t-il un essai gratuit ?">
+    Anthropic n'offre pas d'essai gratuit sur l'API. Vous devez ajouter des crédits dès le départ, mais le minimum est très faible (quelques dollars suffisent pour commencer).
+  </Accordion>
+</AccordionGroup>
