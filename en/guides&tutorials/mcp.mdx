@@ -1,0 +1,188 @@
+---
+title: "🤖 MCP Integration"
+description: "Connect Orsay to Claude and any MCP-compatible client to manage sequences and conversations in plain English"
+---
+
+The **Model Context Protocol (MCP)** is an open standard that lets AI clients (Claude, Cursor, etc.) call external tools directly from a prompt. Orsay exposes its data — conversations, sequences, analytics, leads — through a secure, authenticated MCP server.
+
+The result: query your pipeline in plain English, trigger Orsay actions, and chain multiple tools together (Notion, Linear, Gmail…) — no code required.
+
+## Connect
+
+<Steps>
+  <Step title="Open Connect MCP in Orsay">
+    Go to **[Integrations](https://app.orsay.ai/integrations)** and click **[Connect MCP](https://app.orsay.ai/integrations/claude-mcp/connect-claude-mcp)**.
+
+    You'll find the MCP server URL to copy:
+
+    ```
+    https://client.api.prod.orsay.ai/mcp
+    ```
+  </Step>
+  <Step title="Paste the URL into your MCP client">
+    Open your MCP client (Claude.ai, Claude Desktop, Cursor…) and add a new server with that URL. See the [Compatible clients](#clients) section below for step-by-step instructions.
+  </Step>
+  <Step title="Authorize Orsay">
+    Your client will redirect you to Orsay to sign in and grant access. Authorization is **scoped to your organization** — no other account can read your data.
+  </Step>
+</Steps>
+
+## Compatible clients [#clients]
+
+<Tabs>
+  <Tab title="Claude.ai (web)">
+    1. Go to **[claude.ai/settings/connectors](https://claude.ai/settings/connectors)**
+    2. Click **Add custom connector**
+    3. Paste the URL: `https://client.api.prod.orsay.ai/mcp`
+    4. Give it a name (e.g. *Orsay*) and click **Add**
+    5. Authorize the connection in the Orsay window that opens
+
+    Once connected, the Orsay icon appears in Claude's toolbar and the tools are available in all your conversations.
+  </Tab>
+  <Tab title="Claude Desktop">
+    Open your Claude Desktop config file:
+
+    - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+    Add the Orsay server under `mcpServers`:
+
+    ```json
+    {
+      "mcpServers": {
+        "orsay": {
+          "url": "https://client.api.prod.orsay.ai/mcp"
+        }
+      }
+    }
+    ```
+
+    Restart Claude Desktop. Orsay will appear in the available tools list.
+  </Tab>
+  <Tab title="Cursor">
+    1. Open **Settings** → **MCP**
+    2. Click **Add new global MCP server**
+    3. Paste the URL: `https://client.api.prod.orsay.ai/mcp`
+    4. Save and restart Cursor if prompted
+  </Tab>
+  <Tab title="Other MCP clients">
+    Any client supporting the MCP protocol (Streamable HTTP) can connect using:
+
+    ```
+    https://client.api.prod.orsay.ai/mcp
+    ```
+
+    Refer to your client's documentation for how to add a custom MCP server.
+  </Tab>
+</Tabs>
+
+## Available tools [#tools]
+
+13 tools are exposed. You don't need to call them directly — Claude selects and chains them automatically based on your prompt.
+
+### 💬 Conversations & leads
+
+| Tool | What it does |
+|---|---|
+| `list_conversations` | List conversations with optional filters: classification (positive, negative, engaged…), channel (WhatsApp / Instagram), result count |
+| `get_conversation` | Retrieve the full thread of a conversation with all its messages |
+| `search_conversations` | Search across conversations by text content |
+| `get_lead_info` | Lead details: name, channel, creation date, profile picture |
+
+### 📊 Analytics
+
+| Tool | What it does |
+|---|---|
+| `get_analytics` | Metrics over a date range: contacts reached, classification breakdown (positive, engaged, negative, undetermined), funnel (conversations started, qualified, links sent). Filterable by sequence or channel |
+
+### ⚡ Sequences
+
+| Tool | What it does |
+|---|---|
+| `list_sequences` | List all sequences in the organization (name, trigger, channel, active status) |
+| `get_sequence_detail` | Full details of a sequence: flow steps, associated agent, working hours, advanced settings |
+| `create_sequence` | Create a new sequence: trigger, message flow, agent, response delay, working hours… |
+| `update_sequence` | Update an existing sequence — only provided fields are changed |
+| `delete_sequence` | Permanently delete a sequence |
+
+### 🤖 Agents
+
+| Tool | What it does |
+|---|---|
+| `list_agents` | List AI agents available in the organization |
+| `list_filtering_agents` | List filtering agents (lead qualification before engagement) |
+
+### 🏢 Organization
+
+| Tool | What it does |
+|---|---|
+| `list_organizations` | List all organizations your account belongs to — useful if you manage multiple workspaces |
+
+## Prompt examples [#examples]
+
+Ready-to-use prompts for Claude.
+
+**Analyze your pipeline**
+> *"How many leads replied positively in my Instagram sequences this month? Compare with last month."*
+
+**Ad-hoc segmentation**
+> *"Find leads who mentioned 'pricing' in the last 30 days but haven't received my pricing sequence yet."*
+
+**Natural-language reporting**
+> *"Compare the positive classification rates of my 3 active sequences over the past 14 days and tell me which one performs best."*
+
+**Summarize a conversation**
+> *"Summarize the conversation with lead [leadId] and write a personalized follow-up based on their last replies."*
+
+**Create a sequence**
+> *"Create an Instagram inbound sequence for the account @myaccount using the 'Sales Agent' agent, a 2-minute response delay, and a welcome message 'Hi there, how can I help you?'. Leave it inactive for now."*
+
+**Update a sequence**
+> *"Activate the 'Spring 2026 Campaign' sequence and change its response delay to 5 minutes."*
+
+**Cross-tool workflow** (combining other MCP servers)
+> *"Read this week's positive Orsay conversations, create a Linear ticket for each one with the lead context, then generate a summary in Notion."*
+
+## Technical reference [#reference]
+
+<AccordionGroup>
+  <Accordion title="Available triggers for create_sequence">
+    | Value | Description |
+    |---|---|
+    | `CONTACT_CREATED` | New contact created in the organization |
+    | `CONTACT_SUBSCRIBED_TO_SEQUENCE` | Contact manually added to a sequence |
+    | `WHATSAPP_MESSAGE` | Incoming WhatsApp message (inbound) |
+    | `INSTAGRAM_COMMENT` | Comment on an Instagram post |
+    | `INSTAGRAM_MESSAGE` | Incoming Instagram direct message |
+    | `INSTAGRAM_STORY_REPLY` | Reply to an Instagram story |
+    | `INSTAGRAM_LEAD_FINDER_NEW_FOLLOWER` | New follower of an Instagram account |
+    | `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_FOLLOWERS` | Followers of another account (Lead Finder) |
+    | `INSTAGRAM_LEAD_FINDER_NEW_LIKE` | New like on a post (Lead Finder) |
+    | `INSTAGRAM_LEAD_FINDER_OTHER_ACCOUNT_COMMENT` | Comments on another account (Lead Finder) |
+  </Accordion>
+  <Accordion title="Delay units">
+    `seconds` · `minutes` · `hours` · `days`
+  </Accordion>
+  <Accordion title="Classifications">
+    | Value | Meaning |
+    |---|---|
+    | `positive` | Qualified lead, interested |
+    | `engaged` | Lead replied but not yet fully qualified |
+    | `negative` | Unqualified or uninterested lead |
+    | `undetermined` | No reply yet |
+  </Accordion>
+</AccordionGroup>
+
+## Important notes [#notes]
+
+<Warning>
+  The `create_sequence`, `update_sequence`, and `delete_sequence` tools **modify your Orsay account in real time**. Always review Claude's proposed actions before confirming.
+</Warning>
+
+<Tip>
+  If you manage multiple organizations, Claude will automatically call `list_organizations` to ask which one to use. Mention the organization name in your prompt to skip that step.
+</Tip>
+
+- Access is authenticated via OAuth 2.0 — only your organization's data is accessible.
+- The MCP server is **stateless**: each request is independent, with no persistent server-side session.
+- Compatible with any client supporting the MCP protocol over Streamable HTTP.
