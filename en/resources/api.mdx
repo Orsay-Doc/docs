@@ -5,11 +5,12 @@ description: "Programmatic access to Orsay via API key"
 
 ## Overview
 
-The Orsay REST API allows you to manage sequences programmatically from your own server. This is useful for:
+The Orsay REST API allows you to manage sequences and access conversations programmatically from your own server. This is useful for:
 
 - Automating sequence creation from a VPS or cron job
 - Integrating Orsay into your existing pipeline (e.g., Instagram → DM sequence)
 - Building custom automations without going through the dashboard
+- Retrieving conversation data for your CRM or analytics tools
 
 ## Authentication
 
@@ -252,6 +253,115 @@ DELETE /sequences/{sequence_id}
 }
 ```
 
+---
+
+### List Conversations
+
+```bash
+GET /conversations
+```
+
+Returns conversations for your organization with optional filters.
+
+**Query parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `classification` | string | null | Filter by classification: `positive`, `negative`, `undetermined`, `engaged` |
+| `is_active` | boolean | null | Filter by active (`true`) or inactive (`false`) status |
+| `since` | string | null | ISO 8601 date — only return conversations updated after this date |
+| `page_size` | int | 20 | Number of results per page (max 50) |
+| `last_lead_id` | string | null | Cursor for pagination (use `next_cursor` from previous response) |
+
+**Example:**
+```bash
+curl -X GET "https://client.api.prod.orsay.ai/api/v1/conversations?classification=positive&is_active=true&page_size=10" \
+  -H "Authorization: Bearer sk_live_your_api_key_here"
+```
+
+**Response:**
+```json
+{
+  "conversations": [
+    {
+      "lead_id": "a1b2c3d4-...",
+      "channel": "WHATSAPP",
+      "classification": "positive",
+      "is_active": true,
+      "first_name": "John",
+      "last_name": "Doe",
+      "username": null,
+      "phone_number": "+33612345678",
+      "latest_message_at": "2025-06-01T14:30:00+00:00",
+      "latest_inbound_at": "2025-06-01T14:30:00+00:00",
+      "latest_outbound_at": "2025-06-01T14:25:00+00:00"
+    }
+  ],
+  "next_cursor": "a1b2c3d4-..."
+}
+```
+
+<Note>
+Use `next_cursor` as the `last_lead_id` parameter in subsequent requests to paginate through results. When `next_cursor` is `null`, there are no more results.
+</Note>
+
+---
+
+### Get Conversation Messages
+
+```bash
+GET /conversations/{lead_id}
+```
+
+Returns the full message history of a conversation.
+
+**Path parameters:**
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `lead_id` | UUID | The lead ID of the conversation |
+
+**Example:**
+```bash
+curl -X GET "https://client.api.prod.orsay.ai/api/v1/conversations/a1b2c3d4-5678-90ab-cdef-1234567890ab" \
+  -H "Authorization: Bearer sk_live_your_api_key_here"
+```
+
+**Response:**
+```json
+{
+  "lead_id": "a1b2c3d4-...",
+  "channel": "WHATSAPP",
+  "classification": "positive",
+  "is_active": true,
+  "lead": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": null,
+    "phone_number": "+33612345678"
+  },
+  "messages": [
+    {
+      "message_id": "msg-uuid-1",
+      "content": "Hello! How can I help you?",
+      "inbound": false,
+      "timestamp": "2025-06-01T14:00:00+00:00",
+      "status": "DELIVERED",
+      "sent_by": "ai",
+      "type": "CUSTOM"
+    },
+    {
+      "message_id": "msg-uuid-2",
+      "content": "I'd like to know more about your services",
+      "inbound": true,
+      "timestamp": "2025-06-01T14:05:00+00:00",
+      "status": null,
+      "sent_by": null,
+      "type": null
+    }
+  ],
+  "total_messages": 2
+}
+```
+
 ## Trigger Types
 
 | Trigger | Channel | Type |
@@ -272,9 +382,9 @@ DELETE /sequences/{sequence_id}
 | Code | Description |
 |------|-------------|
 | `401` | Invalid or missing API key |
-| `404` | Sequence not found |
+| `404` | Resource not found (sequence or conversation) |
 | `429` | Rate limit exceeded (200 req/hour) |
-| `400` | Invalid request (bad trigger, missing field, etc.) |
+| `400` | Invalid request (bad trigger, missing field, invalid date format, etc.) |
 
 ## Example: Full Pipeline
 

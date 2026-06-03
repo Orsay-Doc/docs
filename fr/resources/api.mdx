@@ -5,11 +5,12 @@ description: "Accès programmatique à Orsay via clé API"
 
 ## Vue d'ensemble
 
-L'API REST Orsay vous permet de gérer vos séquences de manière programmatique depuis votre propre serveur. Cas d'usage :
+L'API REST Orsay vous permet de gérer vos séquences et d'accéder à vos conversations de manière programmatique depuis votre propre serveur. Cas d'usage :
 
 - Automatiser la création de séquences depuis un VPS ou un cron
 - Intégrer Orsay dans votre pipeline existant (ex : Instagram → DM séquence)
 - Construire des automatisations personnalisées sans passer par le dashboard
+- Récupérer les données de conversation pour votre CRM ou vos outils d'analytique
 
 ## Authentification
 
@@ -252,6 +253,115 @@ DELETE /sequences/{sequence_id}
 }
 ```
 
+---
+
+### Lister les conversations
+
+```bash
+GET /conversations
+```
+
+Retourne les conversations de votre organisation avec des filtres optionnels.
+
+**Paramètres de requête :**
+| Paramètre | Type | Défaut | Description |
+|-----------|------|--------|-------------|
+| `classification` | string | null | Filtrer par classification : `positive`, `negative`, `undetermined`, `engaged` |
+| `is_active` | boolean | null | Filtrer par statut actif (`true`) ou inactif (`false`) |
+| `since` | string | null | Date ISO 8601 — retourne uniquement les conversations mises à jour après cette date |
+| `page_size` | int | 20 | Nombre de résultats par page (max 50) |
+| `last_lead_id` | string | null | Curseur pour la pagination (utiliser `next_cursor` de la réponse précédente) |
+
+**Exemple :**
+```bash
+curl -X GET "https://client.api.prod.orsay.ai/api/v1/conversations?classification=positive&is_active=true&page_size=10" \
+  -H "Authorization: Bearer sk_live_votre_cle_api"
+```
+
+**Réponse :**
+```json
+{
+  "conversations": [
+    {
+      "lead_id": "a1b2c3d4-...",
+      "channel": "WHATSAPP",
+      "classification": "positive",
+      "is_active": true,
+      "first_name": "Jean",
+      "last_name": "Dupont",
+      "username": null,
+      "phone_number": "+33612345678",
+      "latest_message_at": "2025-06-01T14:30:00+00:00",
+      "latest_inbound_at": "2025-06-01T14:30:00+00:00",
+      "latest_outbound_at": "2025-06-01T14:25:00+00:00"
+    }
+  ],
+  "next_cursor": "a1b2c3d4-..."
+}
+```
+
+<Note>
+Utilisez `next_cursor` comme paramètre `last_lead_id` dans les requêtes suivantes pour paginer les résultats. Quand `next_cursor` est `null`, il n'y a plus de résultats.
+</Note>
+
+---
+
+### Obtenir les messages d'une conversation
+
+```bash
+GET /conversations/{lead_id}
+```
+
+Retourne l'historique complet des messages d'une conversation.
+
+**Paramètres de chemin :**
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| `lead_id` | UUID | L'ID du lead de la conversation |
+
+**Exemple :**
+```bash
+curl -X GET "https://client.api.prod.orsay.ai/api/v1/conversations/a1b2c3d4-5678-90ab-cdef-1234567890ab" \
+  -H "Authorization: Bearer sk_live_votre_cle_api"
+```
+
+**Réponse :**
+```json
+{
+  "lead_id": "a1b2c3d4-...",
+  "channel": "WHATSAPP",
+  "classification": "positive",
+  "is_active": true,
+  "lead": {
+    "first_name": "Jean",
+    "last_name": "Dupont",
+    "username": null,
+    "phone_number": "+33612345678"
+  },
+  "messages": [
+    {
+      "message_id": "msg-uuid-1",
+      "content": "Bonjour ! Comment puis-je vous aider ?",
+      "inbound": false,
+      "timestamp": "2025-06-01T14:00:00+00:00",
+      "status": "DELIVERED",
+      "sent_by": "ai",
+      "type": "CUSTOM"
+    },
+    {
+      "message_id": "msg-uuid-2",
+      "content": "Je voudrais en savoir plus sur vos services",
+      "inbound": true,
+      "timestamp": "2025-06-01T14:05:00+00:00",
+      "status": null,
+      "sent_by": null,
+      "type": null
+    }
+  ],
+  "total_messages": 2
+}
+```
+
 ## Types de déclencheurs
 
 | Déclencheur | Canal | Type |
@@ -272,9 +382,9 @@ DELETE /sequences/{sequence_id}
 | Code | Description |
 |------|-------------|
 | `401` | Clé API invalide ou manquante |
-| `404` | Séquence non trouvée |
+| `404` | Ressource non trouvée (séquence ou conversation) |
 | `429` | Rate limit dépassé (200 req/heure) |
-| `400` | Requête invalide (mauvais trigger, champ manquant, etc.) |
+| `400` | Requête invalide (mauvais trigger, champ manquant, format de date invalide, etc.) |
 
 ## Exemple : Pipeline complet
 
