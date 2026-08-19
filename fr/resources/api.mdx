@@ -45,6 +45,47 @@ https://client.api.prod.orsay.ai/api/v1
 
 ## Endpoints
 
+### Créer un lead
+
+```bash
+POST /leads
+```
+
+Envoie un lead dans une séquence, exactement comme l'action « Create Lead » de Zapier ou Make, mais avec une simple clé API. L'organisation est déduite de la clé : aucun jeton OAuth à rafraîchir, donc aucune connexion qui expire au milieu d'un scénario.
+
+**Corps :**
+```json
+{
+  "first_name": "Marie",
+  "last_name": "Durand",
+  "phone": "+33612345678",
+  "email": "marie@exemple.com",
+  "sequence_id": "a1b2c3d4-...",
+  "url": "https://exemple.com/formulaire"
+}
+```
+
+Seuls `first_name` et `phone` sont obligatoires. Le téléphone doit être au format international. Si `sequence_id` est omis, le lead est créé sans être abonné à une séquence.
+
+**Exemple :**
+```bash
+curl -X POST https://client.api.prod.orsay.ai/api/v1/leads \
+  -H "Authorization: Bearer sk_live_votre_cle_api" \
+  -H "Content-Type: application/json" \
+  -d '{"first_name":"Marie","phone":"+33612345678","sequence_id":"a1b2c3d4-..."}'
+```
+
+**Réponse (202) :**
+```json
+{ "message": "Lead successfully processed" }
+```
+
+<Note>
+La séquence visée doit utiliser le déclencheur **Contact subscribed to sequence**. Un `402` signifie que l'organisation n'a pas d'abonnement actif.
+</Note>
+
+---
+
 ### Lister les agents
 
 ```bash
