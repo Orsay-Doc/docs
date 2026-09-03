@@ -1,0 +1,22 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="op-mark-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#221E1A" />
+      <stop offset="100%" stop-color="#0B0A09" />
+    </linearGradient>
+    <linearGradient id="op-mark-fg" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#F3C25A" />
+      <stop offset="55%" stop-color="#E89436" />
+      <stop offset="100%" stop-color="#D94F1E" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#op-mark-bg)" />
+  <g transform="translate(16 16) rotate(-8) translate(-16 -16)">
+    <path
+      d="M16 8.2c3.15 0 5.6 3.42 5.6 7.8s-2.45 7.8-5.6 7.8-5.6-3.42-5.6-7.8 2.45-7.8 5.6-7.8Zm0 2.5c-1.56 0-2.7 2.3-2.7 5.3s1.14 5.3 2.7 5.3 2.7-2.3 2.7-5.3-1.14-5.3-2.7-5.3Z"
+      fill-rule="evenodd"
+      fill="url(#op-mark-fg)"
+    />
+  </g>
+  <circle cx="24.5" cy="7.5" r="1.75" fill="#E8B547" />
+</svg>

@@ -27,7 +27,7 @@ The result: query your pipeline in plain English, trigger Orsay actions, and cha
   </Step>
 </Steps>
 
-## Compatible clients [#clients]
+## Compatible clients {#clients}
 
 <Tabs>
   <Tab title="Claude.ai (web)">
@@ -76,7 +76,7 @@ The result: query your pipeline in plain English, trigger Orsay actions, and cha
   </Tab>
 </Tabs>
 
-## Available tools [#tools]
+## Available tools {#tools}
 
 13 tools are exposed. You don't need to call them directly — Claude selects and chains them automatically based on your prompt.
 
@@ -118,7 +118,7 @@ The result: query your pipeline in plain English, trigger Orsay actions, and cha
 |---|---|
 | `list_organizations` | List all organizations your account belongs to — useful if you manage multiple workspaces |
 
-## Prompt examples [#examples]
+## Prompt examples {#examples}
 
 Ready-to-use prompts for Claude.
 
@@ -143,7 +143,7 @@ Ready-to-use prompts for Claude.
 **Cross-tool workflow** (combining other MCP servers)
 > *"Read this week's positive Orsay conversations, create a Linear ticket for each one with the lead context, then generate a summary in Notion."*
 
-## Technical reference [#reference]
+## Technical reference {#reference}
 
 <AccordionGroup>
   <Accordion title="Available triggers for create_sequence">
@@ -169,7 +169,7 @@ Ready-to-use prompts for Claude.
   </Accordion>
 </AccordionGroup>
 
-## Important notes [#notes]
+## Important notes {#notes}
 
 <Warning>
   The `create_sequence`, `update_sequence`, and `delete_sequence` tools **modify your Orsay account in real time**. Always review Claude's proposed actions before confirming.
