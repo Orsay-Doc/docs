@@ -1,0 +1,86 @@
+:root {
+  --orsay-canvas: #f4f1ea;
+  --orsay-ink: #161412;
+  --orsay-brand: #d94f1e;
+  --orsay-link: #c84618;
+  --orsay-accent: #e89436;
+  --orsay-surface: #fffdf8;
+  --orsay-border: #d9d2c7;
+}
+
+#background-color,
+#body-content,
+#navbar,
+#sidebar,
+#footer,
+#mobile-nav {
+  background-color: var(--orsay-canvas);
+  color: var(--orsay-ink);
+}
+
+#body-content a:not([role="button"]),
+#footer a {
+  color: var(--orsay-link);
+}
+
+card,
+callout,
+step,
+#search-bar-entry {
+  border-color: var(--orsay-border);
+  background-color: var(--orsay-surface);
+}
+
+#topbar-cta-button,
+#sidebar-content li[data-active],
+toc-item[data-active] {
+  border-color: var(--orsay-brand);
+}
+
+#topbar-cta-button > a {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#topbar-cta-button > a > span.absolute.inset-0 {
+  background-color: var(--orsay-link);
+}
+
+#footer a[href="https://wa.me/33780905889"],
+#footer a[href="https://wa.me/33780905889/"] {
+  color: var(--orsay-link);
+}
+
+#footer a[href="https://wa.me/33780905889"] img,
+#footer a[href="https://wa.me/33780905889/"] img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--orsay-accent);
+  outline-offset: 3px;
+}
+
+.dark {
+  --orsay-canvas: #161412;
+  --orsay-ink: #f4f1ea;
+  --orsay-link: #e89436;
+  --orsay-surface: #221e1a;
+  --orsay-border: #554a40;
+}
+
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid Highlight;
+  }
+
+  #footer a[href="https://wa.me/33780905889"] img,
+  #footer a[href="https://wa.me/33780905889/"] img {
+    forced-color-adjust: auto;
+  }
+}

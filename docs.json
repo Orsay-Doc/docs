@@ -3,12 +3,20 @@
   "theme": "mint",
   "name": "Orsay Docs",
   "colors": {
-    "primary": "#25dd90",
-    "light": "#25dd90",
-    "dark": "#25dd90"
+    "primary": "#161412",
+    "light": "#E89436",
+    "dark": "#C84618"
   },
-
-  "favicon": "icone.png",
+  "fonts": {
+    "family": "Inter"
+  },
+  "background": {
+    "color": {
+      "light": "#F4F1EA",
+      "dark": "#161412"
+    }
+  },
+  "favicon": "/logo/orsay-mark.svg",
   "navigation": {
     "dropdowns": [
       {
@@ -61,6 +69,8 @@
             "pages": [
               "fr/guides&tutorials/agents",
               "fr/guides&tutorials/voice-cloning",
+              "fr/guides&tutorials/ai-sequence-builder",
+              "fr/guides&tutorials/export-conversations",
               "fr/guides&tutorials/campaigns",
               "fr/guides&tutorials/mcp",
               "fr/overview/conversation-improvements",
@@ -86,7 +96,7 @@
           {
             "group": " ",
             "pages": [
-              "index"
+              "en/home"
             ]
           },
           {
@@ -129,6 +139,8 @@
             "pages": [
               "en/guides&tutorials/agents",
               "en/guides&tutorials/voice-cloning",
+              "en/guides&tutorials/ai-sequence-builder",
+              "en/guides&tutorials/export-conversations",
               "en/guides&tutorials/campaigns",
               "en/guides&tutorials/mcp",
               "en/overview/conversation-improvements",
@@ -161,8 +173,8 @@
     }
   ],
   "logo": {
-    "light": "/logo/orsay_ai_large.svg",
-    "dark": "/logo/orsay_ai_large.svg"
+    "light": "/logo/orsay-mark.svg",
+    "dark": "/logo/orsay-mark.svg"
   },
   "navbar": {
     "links": [
@@ -184,7 +196,7 @@
   "footer": {
     "socials": {
       "website": "https://orsay.ai/",
-      "instagram": "https://www.instagram.com/orsay_tech/"
+      "telegram": "https://wa.me/33780905889"
     }
   }
 }
