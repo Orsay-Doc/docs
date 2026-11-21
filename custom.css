@@ -6,6 +6,7 @@
   --orsay-accent: #e89436;
   --orsay-surface: #fffdf8;
   --orsay-border: #d9d2c7;
+  --orsay-muted: #6b635a;
 }
 
 #background-color,
@@ -70,6 +71,122 @@ button:focus-visible,
   --orsay-link: #e89436;
   --orsay-surface: #221e1a;
   --orsay-border: #554a40;
+  --orsay-muted: #b5aa9e;
+}
+
+.orsay-plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.orsay-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--orsay-border);
+  border-radius: 1rem;
+  background-color: var(--orsay-surface);
+}
+
+.orsay-plan[data-featured] {
+  border-color: var(--orsay-brand);
+}
+
+.orsay-plan p {
+  margin: 0;
+}
+
+.orsay-plan-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--orsay-ink);
+}
+
+.orsay-plan-badge {
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background-color: var(--orsay-link);
+  color: var(--orsay-surface);
+}
+
+.orsay-plan-price {
+  font-size: 0.875rem;
+  color: var(--orsay-muted);
+}
+
+.orsay-plan-amount {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--orsay-ink);
+}
+
+.orsay-plan-includes {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--orsay-border);
+  border-radius: 1rem;
+  background-color: var(--orsay-surface);
+}
+
+.orsay-plan-includes-title {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--orsay-muted);
+}
+
+.orsay-channel {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.orsay-channel-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--orsay-canvas);
+}
+
+.orsay-channel-icon .icon {
+  background-color: var(--orsay-link);
+}
+
+.orsay-channel p {
+  margin: 0;
+}
+
+.orsay-channel-name {
+  font-weight: 600;
+  color: var(--orsay-ink);
+}
+
+.orsay-plan-note {
+  font-size: 0.875rem;
+  color: var(--orsay-muted);
+}
+
+@media (max-width: 40rem) {
+  .orsay-plans,
+  .orsay-plan-includes {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (forced-colors: active) {
