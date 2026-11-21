@@ -20,8 +20,8 @@
   "navigation": {
     "dropdowns": [
       {
-        "dropdown": "🇫🇷 Français",
-        "icon": "earth",
+        "dropdown": "Français",
+        "icon": "/images/flags/fr.svg",
         "groups": [
           {
             "group": " ",
@@ -90,8 +90,8 @@
         ]
       },
       {
-        "dropdown": "🇬🇧 English",
-        "icon": "earth",
+        "dropdown": "English",
+        "icon": "/images/flags/gb.svg",
         "groups": [
           {
             "group": " ",
