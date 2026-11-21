@@ -67,14 +67,14 @@
           {
             "group": "🤖 Fonctionnalités clés",
             "pages": [
-              "fr/guides&tutorials/agents",
-              "fr/guides&tutorials/voice-cloning",
-              "fr/guides&tutorials/ai-sequence-builder",
-              "fr/guides&tutorials/export-conversations",
-              "fr/guides&tutorials/campaigns",
-              "fr/guides&tutorials/mcp",
-              "fr/overview/conversation-improvements",
-              "fr/overview/analytics"
+              "fr/features/agents",
+              "fr/features/voice-cloning",
+              "fr/features/ai-sequence-builder",
+              "fr/features/export-conversations",
+              "fr/features/campaigns",
+              "fr/features/mcp",
+              "fr/features/conversation-improvements",
+              "fr/features/analytics"
             ]
           },
           {
@@ -137,14 +137,14 @@
           {
             "group": "🤖 Core features",
             "pages": [
-              "en/guides&tutorials/agents",
-              "en/guides&tutorials/voice-cloning",
-              "en/guides&tutorials/ai-sequence-builder",
-              "en/guides&tutorials/export-conversations",
-              "en/guides&tutorials/campaigns",
-              "en/guides&tutorials/mcp",
-              "en/overview/conversation-improvements",
-              "en/overview/analytics"
+              "en/features/agents",
+              "en/features/voice-cloning",
+              "en/features/ai-sequence-builder",
+              "en/features/export-conversations",
+              "en/features/campaigns",
+              "en/features/mcp",
+              "en/features/conversation-improvements",
+              "en/features/analytics"
             ]
           },
           {
@@ -155,7 +155,7 @@
               "en/resources/prompt",
               "en/resources/api",
               "en/resources/claude-api-key",
-              "en/template_prompt"
+              "en/resources/prompt-template"
             ]
           }
         ]
@@ -170,6 +170,78 @@
     {
       "source": "/index",
       "destination": "/fr/home"
+    },
+    {
+      "source": "/fr/guides&tutorials/agents",
+      "destination": "/fr/features/agents"
+    },
+    {
+      "source": "/fr/guides&tutorials/voice-cloning",
+      "destination": "/fr/features/voice-cloning"
+    },
+    {
+      "source": "/fr/guides&tutorials/ai-sequence-builder",
+      "destination": "/fr/features/ai-sequence-builder"
+    },
+    {
+      "source": "/fr/guides&tutorials/export-conversations",
+      "destination": "/fr/features/export-conversations"
+    },
+    {
+      "source": "/fr/guides&tutorials/campaigns",
+      "destination": "/fr/features/campaigns"
+    },
+    {
+      "source": "/fr/guides&tutorials/mcp",
+      "destination": "/fr/features/mcp"
+    },
+    {
+      "source": "/fr/overview/conversation-improvements",
+      "destination": "/fr/features/conversation-improvements"
+    },
+    {
+      "source": "/fr/overview/analytics",
+      "destination": "/fr/features/analytics"
+    },
+    {
+      "source": "/fr/template_prompt",
+      "destination": "/fr/resources/prompt-template"
+    },
+    {
+      "source": "/en/guides&tutorials/agents",
+      "destination": "/en/features/agents"
+    },
+    {
+      "source": "/en/guides&tutorials/voice-cloning",
+      "destination": "/en/features/voice-cloning"
+    },
+    {
+      "source": "/en/guides&tutorials/ai-sequence-builder",
+      "destination": "/en/features/ai-sequence-builder"
+    },
+    {
+      "source": "/en/guides&tutorials/export-conversations",
+      "destination": "/en/features/export-conversations"
+    },
+    {
+      "source": "/en/guides&tutorials/campaigns",
+      "destination": "/en/features/campaigns"
+    },
+    {
+      "source": "/en/guides&tutorials/mcp",
+      "destination": "/en/features/mcp"
+    },
+    {
+      "source": "/en/overview/conversation-improvements",
+      "destination": "/en/features/conversation-improvements"
+    },
+    {
+      "source": "/en/overview/analytics",
+      "destination": "/en/features/analytics"
+    },
+    {
+      "source": "/en/template_prompt",
+      "destination": "/en/resources/prompt-template"
     }
   ],
   "logo": {

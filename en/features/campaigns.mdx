@@ -1,0 +1,62 @@
+---
+title: "📣 Campaigns"
+description: "Send a one-off bulk message — including a voice message — to filtered WhatsApp leads."
+---
+
+A **Campaign** is a one-shot bulk send to existing WhatsApp leads. Unlike a sequence (which runs continuously on a trigger), a campaign goes out **once**, to the audience you select, with the message you write.
+
+<Note>
+**WhatsApp only.** Campaigns work on personal WhatsApp and the WhatsApp Business API. They are the right tool when you want to broadcast something *now* (a launch, an event, a promo) — and especially powerful for sending a **voice message as the first contact**.
+</Note>
+
+## When to use a Campaign vs a Sequence
+
+| Use a **Sequence** when… | Use a **Campaign** when… |
+|---|---|
+| You want continuous, trigger-based automation (every new lead enters the flow) | You want a one-time blast to a defined list |
+| Each lead is processed individually, on their own clock | Every lead receives the message at the same time |
+| The first message is a template that runs forever | You're announcing something *now* |
+
+## Send an audio-first Campaign on WhatsApp
+
+The headline use case: open a campaign with a **voice message** so leads hear your real voice before any text.
+
+<Steps>
+  <Step title="Open Campaigns">
+    In the sidebar, click **[Campaigns](https://app.orsay.ai/campaigns)** → **+ New campaign**.
+  </Step>
+  <Step title="Filter your audience">
+    On the left panel, narrow down who receives the campaign:
+    - **Channel** — pick Personal WhatsApp or WhatsApp Business
+    - **Classification** — Positive / Negative / Engaged / Undetermined
+    - Search by name, phone, or username
+
+    The right panel updates live with matching leads. Select all, or pick manually with the checkboxes.
+  </Step>
+  <Step title="Compose the message">
+    In the message editor:
+    - Switch the message type to **🎙️ Voice message**.
+    - **Record** directly in the editor or **upload** an audio file (max 25 MB; MP3, M4A, WAV, OGG, AAC, WebM).
+    - Optionally add a follow-up text message that goes out right after the voice note.
+    - Personalize text with `{{first_name}}`, `{{last_name}}`, `{{username}}`.
+
+    The live preview on the right shows the exact message each lead will receive.
+  </Step>
+  <Step title="Send or schedule">
+    Click **Send now** to broadcast immediately, or **Schedule** to set a future date/time.
+  </Step>
+</Steps>
+
+## Text-only campaigns
+
+Voice isn't mandatory — you can send a text-only Campaign exactly the same way (skip the voice step in the editor). All the same filters, variables, and scheduling apply.
+
+## After the campaign
+
+Every reply lands in [Conversations](/en/personal-whatsapp/5-conversations) and is handled by the assigned agent (or by you if you take over). Track open rate, response rate, and positive rate in [Analytics](/en/features/analytics).
+
+## Bulk lead import (CSV)
+
+If your audience isn't yet in Orsay, upload a CSV first via **[Integrations](https://app.orsay.ai/integrations) → [Bulk Leads](https://app.orsay.ai/integrations/bulk-leads) → Upload Files**. Then run a Campaign on the freshly imported leads.
+
+→ For ongoing automation on every new lead, use a [WhatsApp sequence](/en/personal-whatsapp/3-sequence) instead.
