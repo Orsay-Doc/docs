@@ -64,6 +64,10 @@ button:focus-visible,
   outline-offset: 3px;
 }
 
+.nav-dropdown-trigger:focus-visible {
+  outline-offset: -3px;
+}
+
 .dark {
   --orsay-canvas: #161412;
   --orsay-ink: #f4f1ea;
